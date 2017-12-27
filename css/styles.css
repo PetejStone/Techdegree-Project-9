@@ -27,7 +27,7 @@ html {
  * Remove the margin in all browsers (opinionated).
  */
 body {
-  margin-top: 1em; }
+  margin: 0em; }
 
 /**
  * Add the correct display in IE 9-.
@@ -388,5 +388,20 @@ template {
  */
 [hidden] {
   display: none; }
+
+header {
+  background-color: #A87FD7;
+  width: 100%;
+  height: 2em;
+  padding-top: .5em;
+  padding-left: .5em;
+  color: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+.title-one {
+  font-weight: 400; }
+
+.title-two {
+  font-weight: 100; }
 
 /*# sourceMappingURL=styles.css.map */
