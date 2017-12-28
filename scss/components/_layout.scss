@@ -1,17 +1,114 @@
-header {
-  background-color: $header-color;
-  width: 100%;
-  height: 2em;
-  padding-top: .5em;
-  padding-left: .5em;
-  color: $white;
-  font-family: $helvetica-font-stack;
-}
+
 
 .title-one {
-  font-weight:$font-weight--medium;
+  font-weight: $font-weight--medium;
 }
 
 .title-two {
   font-weight: $font-weight--thin;
+}
+
+.nav-container {
+  @include flexy(flex, row);
+  justify-content: space-between;
+  align-items: center;
+  background-color: $header-color;
+  color: $white;
+  height: 4em;
+}
+
+.nav__heading {
+  font-family: $helvetica-font-stack;
+  margin: 1em;
+}
+
+.nav__list {
+  padding-right: 1em;
+  @include flexy(flex, row);
+  align-items: center;
+  & > li {
+    font-size: 1em;
+  }
+}
+
+.nav__item {
+  font-weight: $font-weight--thin;
+}
+
+.bell {
+  margin-right: 2em;
+  padding-right: 1em;
+  border-right: 1px solid $black;
+}
+
+.notification {
+  background-color: $notification-color;
+  width: 3px;
+  height: 3px;
+  padding: 4px;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  top: 14px;
+  right: 202px;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: .5em;
+}
+
+.name {
+  font-family: $helvetica-font-stack;
+  font-weight: $font-weight--thin;
+  letter-spacing: 1.2px;
+}
+
+.sidebar {
+  background-color: $sidebar-color;
+  @include flexy(flex, column);
+  width: 4em;
+  height: 100vh;
+  align-items: center;
+  position: absolute;
+    & > :nth-child(1n) {
+      margin: 1em;
+    }
+}
+
+.dashboard {
+  margin: 0em 1em 0 5em;
+  width: 100%;
+  color: $dashboard-font;
+  font-weight: $font-weight--medium;
+  background-color: $white;
+  @extend %main-font;
+    &--top {
+    background-color: $dashboard-top-background;
+    @include flexy(flex, row);
+    justify-content: space-between;
+    }
+    &--tab {
+      background-color: $white;
+      padding-right: 1em;
+    }
+}
+
+.searchbar {
+  position: absolute;
+  margin-top: .5em;
+  right: 2em;
+}
+
+#search {
+  height: 3em;
+  width: 30vw;
+  border-radius: 5px;
+  border: 1px solid $light-grey;
+}
+
+input[placeholder] {
+  padding-left: 10px;
 }
