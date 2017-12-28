@@ -79,30 +79,33 @@
 }
 
 .dashboard {
-  margin: 0em 1em 0 5em;
-  width: 100%;
-  color: $dashboard-font;
+  margin-left: 64px;
+  max-width: 100%;
   font-weight: $font-weight--medium;
   background-color: $white;
   @extend %main-font;
-    &--top {
-    background-color: $dashboard-top-background;
-    @include flexy(flex, row);
-    justify-content: space-between;
-    }
+  @include flexy(flex, row);
+  justify-content: space-between;
     &--tab {
+      color: $dashboard-font;
       background-color: $white;
-      padding-right: 1em;
-    }
-}
+      margin: .5em;
+      max-width: 5em;
 
-.searchbar {
-  position: absolute;
-  margin-top: .5em;
-  right: 2em;
+    }
+    &--search {
+      width: 100%;
+      background-color: $dash-background;
+      border-left: 1px solid $border-color;
+      border-bottom: 1px solid $border-color;
+
+ }
 }
 
 #search {
+  float: right;
+  margin-top: 1.5em;
+  margin-right: 1em;
   height: 3em;
   width: 30vw;
   border-radius: 5px;
@@ -111,4 +114,11 @@
 
 input[placeholder] {
   padding-left: 10px;
+  @extend %main-font;
+}
+
+.spyglass {
+  position: absolute;
+  right: 1.5em;
+  top: 5.5em;
 }
