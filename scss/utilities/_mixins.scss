@@ -40,18 +40,14 @@
       @content;
     }
   }
-}
 
-@mixin mq($size) {
-  @if $size == 'medium' {
+  @else if $size == 'medium' {
     @media (min-width: $brkpoint-med) {
       @content;
     }
   }
-}
-
-@mixin mq($size) {
-  @if $size == 'large' {
+  
+  @else if $size == 'large' {
     @media (min-width: $brkpoint-large) {
       @content;
     }

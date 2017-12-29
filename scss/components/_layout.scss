@@ -78,8 +78,11 @@
     }
 }
 
-.dashboard {
+main {
   margin-left: 64px;
+}
+
+.dashboard {
   max-width: 100%;
   font-weight: $font-weight--medium;
   background-color: $white;
@@ -121,4 +124,40 @@ input[placeholder] {
   position: absolute;
   right: 1.5em;
   top: 5.5em;
+}
+
+.alert {
+  @extend %main-font;
+  @extend %center;
+  text-align: left;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: $font-weight--thin;
+  letter-spacing: .5px;
+  margin-top: 1em;
+  padding-left: 10px;
+  width: 95%;
+  height: 5em;
+  color: $white;
+  background-color: $main-color;
+  @include flexy(flex, row);
+  justify-content: space-between;
+  @include mq(medium) {
+    font-size: 12px;
+    height: 3em;
+  }
+    &__text--close {
+      font-weight: $font-weight--medium;
+      width: 3em;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+}
+
+.close-icon {
+  transform: translateY(12px);
+
+
 }
