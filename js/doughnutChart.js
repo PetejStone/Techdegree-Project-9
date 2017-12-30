@@ -1,13 +1,15 @@
-var ctx = document.getElementById("pieChart").getContext('2d');
-var pieChart = new Chart(ctx, {
-    type: 'pie',
+var ctx = document.getElementById("doughnutChart").getContext('2d');
+var doughnutChart = new Chart(ctx, {
+    type: 'doughnut',
     data: {
-        labels: ['Week-1', 'Week-2', 'Week-3', 'Week-4', 'Week-5', 'Week-6', 'Week-7', 'Week-8'],
+        labels: ['Phontes', 'Tablets', 'Desktop'],
         datasets: [{
             label: 'Traffic',
-            data: ["500", "1000", "800", "1200", "1000", "1300", "1200", "1500", "1400", "1800", "1700", "200"],
+            data: ["70", "13", "13"],
             backgroundColor: [
-              'rgba(191, 162, 215, 0.2)',
+              '#65619E',
+              '#7DD4A1',
+              '#7496B4'
 
             ],
             borderColor: [

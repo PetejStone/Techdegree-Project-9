@@ -7,13 +7,13 @@ var barChart = new Chart(ctx, {
             label: 'Traffic',
             data: ["50", "100", "75", "150", "200", "175", "7"],
             backgroundColor: [
-              'rgb(91, 44, 129)',
-              'rgb(91, 44, 129)',
-              'rgb(91, 44, 129)',
-              'rgb(91, 44, 129)',
-              'rgb(91, 44, 129)',
-              'rgb(91, 44, 129)',
-              'rgb(91, 44, 129)'
+              '#65619E',
+              '#65619E',
+              '#65619E',
+              '#65619E',
+              '#65619E',
+              '#65619E',
+              '#65619E'
 
             ],
             borderColor: [
@@ -24,6 +24,8 @@ var barChart = new Chart(ctx, {
         }]
     },
     options: {
+        legend: {
+            display: false,
       elements: {
         line: {
             tension: 0,
@@ -39,4 +41,4 @@ var barChart = new Chart(ctx, {
     }
   }
 }
-});
+}});

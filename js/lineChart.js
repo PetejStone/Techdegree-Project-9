@@ -18,6 +18,8 @@ var lineChart = new Chart(ctx, {
         }]
     },
     options: {
+        legend: {
+            display: false,
       elements: {
         line: {
             tension: 0,
@@ -29,8 +31,8 @@ var lineChart = new Chart(ctx, {
                     beginAtZero: true
                 }
             }]
-        }
-    }
+
+    }}
   }
 }
-});
+}});
