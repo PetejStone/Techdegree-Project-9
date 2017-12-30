@@ -67,21 +67,31 @@
 }
 
 .sidebar {
-  background-color: $sidebar-color;
-  @include flexy(flex, column);
-  width: 4em;
-  height: 100vh;
-  align-items: center;
-  position: absolute;
-    & > :nth-child(1n) {
-      margin: 1em;
+  background-color: #5A4176;
+  display: flex;
+  flex-direction: row;
+  padding: 1em;
+  height: 3.5em;
+  justify-content: space-evenly;
+
+  @include mq(medium){
+    background-color: $sidebar-color;
+    @include flexy(flex, column);
+    justify-content: flex-start;
+    width: 4em;
+    height: 100vh;
+    align-items: center;
+    position: absolute;
+      & > :nth-child(1n) {
+        margin: 1em;
     }
 }
-
-main {
-  margin-left: 64px;
 }
-
+main {
+  @include mq(medium){
+    margin-left: 64px;
+ }
+}
 .dashboard {
   max-width: 100%;
   font-weight: $font-weight--medium;
@@ -123,10 +133,13 @@ input[placeholder] {
 
 .spyglass {
   position: absolute;
-  right: 1.5em;
-  top: 5.5em;
+  right: 1em;
+  top: 9em;
+    @include mq(medium){
+    right: 1.5em;
+    top: 5.5em;
 }
-
+}
 .alert {
   @extend %main-font;
   @extend %center;
@@ -138,15 +151,46 @@ input[placeholder] {
   border-radius: 5px;
   background-color: $main-color;
   padding: .5em;
-    &__close:hover {
-      cursor: pointer;
-    }
 
+    &__close {
+      padding: 5px;
+      &:hover {
+        cursor: pointer;
+      }
+  }
 }
 
+.chart-top {
+  @include flexy(flex, row);
+}
 
-.close-icon {
-  transform: translateY(12px);
+.weekly-chart {
+  margin-top: 3em;
+  @extend %center;
+  width: 90%;
+  height: 1em;
+}
 
+.traffic {
+  @extend %main-font;
+  font-weight: $font-weight--medium;
+  color: $light-grey;
+}
 
+.chart-nav {
+  width: 95%;
+  @extend %main-font;
+  font-weight: $font-weight--medium;
+  @include flexy(flex, row);
+  justify-content: flex-end;
+    & li {
+      padding: 10px;
+      margin-left: 5px;
+      &:hover {
+        cursor: pointer;
+        background-color: $nav-highlight;
+        color: $white;
+        border-radius: 15px;
+      }
+    }
 }

@@ -1,7 +1,7 @@
-.dashboard, input[placeholder], .alert {
+.dashboard, input[placeholder], .alert, .traffic, .chart-nav {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
-.alert {
+.alert, .weekly-chart {
   margin: 0 auto; }
 
 * {
@@ -455,16 +455,26 @@ template {
 .sidebar {
   background-color: #5A4176;
   display: flex;
-  flex-direction: column;
-  width: 4em;
-  height: 100vh;
-  align-items: center;
-  position: absolute; }
-  .sidebar > :nth-child(1n) {
-    margin: 1em; }
+  flex-direction: row;
+  padding: 1em;
+  height: 3.5em;
+  justify-content: space-evenly; }
+  @media (min-width: 768px) {
+    .sidebar {
+      background-color: #5A4176;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      width: 4em;
+      height: 100vh;
+      align-items: center;
+      position: absolute; }
+      .sidebar > :nth-child(1n) {
+        margin: 1em; } }
 
-main {
-  margin-left: 64px; }
+@media (min-width: 768px) {
+  main {
+    margin-left: 64px; } }
 
 .dashboard {
   max-width: 100%;
@@ -499,8 +509,12 @@ input[placeholder] {
 
 .spyglass {
   position: absolute;
-  right: 1.5em;
-  top: 5.5em; }
+  right: 1em;
+  top: 9em; }
+  @media (min-width: 768px) {
+    .spyglass {
+      right: 1.5em;
+      top: 5.5em; } }
 
 .alert {
   display: flex;
@@ -512,10 +526,37 @@ input[placeholder] {
   border-radius: 5px;
   background-color: #7F54B0;
   padding: .5em; }
-  .alert__close:hover {
-    cursor: pointer; }
+  .alert__close {
+    padding: 5px; }
+    .alert__close:hover {
+      cursor: pointer; }
 
-.close-icon {
-  transform: translateY(12px); }
+.chart-top {
+  display: flex;
+  flex-direction: row; }
+
+.weekly-chart {
+  margin-top: 3em;
+  width: 90%;
+  height: 1em; }
+
+.traffic {
+  font-weight: 400;
+  color: #d1d1d1; }
+
+.chart-nav {
+  width: 95%;
+  font-weight: 400;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end; }
+  .chart-nav li {
+    padding: 10px;
+    margin-left: 5px; }
+    .chart-nav li:hover {
+      cursor: pointer;
+      background-color: #69D36E;
+      color: #fff;
+      border-radius: 15px; }
 
 /*# sourceMappingURL=styles.css.map */
