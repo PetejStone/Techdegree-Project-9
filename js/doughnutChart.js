@@ -2,7 +2,7 @@ var ctx = document.getElementById("doughnutChart").getContext('2d');
 var doughnutChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-        labels: ['Phontes', 'Tablets', 'Desktop'],
+        labels: ['<p>Phones</p>', '<p>Tablets</p>', '<p>Desktop</p>'],
         datasets: [{
             label: 'Traffic',
             data: ["70", "13", "13"],
@@ -20,6 +20,8 @@ var doughnutChart = new Chart(ctx, {
         }]
     },
     options: {
+        legend: {
+            display: false,
       elements: {
         line: {
             tension: 0,
@@ -28,11 +30,13 @@ var doughnutChart = new Chart(ctx, {
             type: 'category',
             labels: ["2500", "2000", "1500", "1000", "500", "0"],
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
                 }
             }]
         }
     }
   }
 }
-});
+}});
+
+document.getElementById('chartjsLegend').innerHTML = doughnutChart.generateLegend();

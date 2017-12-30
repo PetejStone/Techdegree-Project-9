@@ -79,7 +79,7 @@
     @include flexy(flex, column);
     justify-content: flex-start;
     width: 4em;
-    height: 100vh;
+    height: 100vw;
     align-items: center;
     position: absolute;
       & > :nth-child(1n) {
@@ -169,7 +169,6 @@ input[placeholder] {
   @extend %center;
   width: 90%;
   padding-bottom: 2em;
-  border-bottom: 1px solid $light-grey;
 }
 
 .traffic {
@@ -196,13 +195,13 @@ input[placeholder] {
     }
 }
 
-.line-chart {
-  border-bottom: 1px solid $light-grey;
-}
 
 .chart-row {
-  padding-right: 5em;
+  @extend %center;
   @include flexy(flex, row);
+  border-top: 1px solid $light-grey;
+  width: 90%;
+  border-bottom: 1px solid $light-grey;
 
 }
 
@@ -210,4 +209,29 @@ input[placeholder] {
   width: 50%;
   @extend %center;
   border-right: 1px solid $light-grey;
+}
+
+.doughnut-chart {
+  padding-left: 1em;
+  width: 50%;
+
+}
+
+.chartjsLegend li span {
+    right: 3em;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+
+.chartjsLegend li {
+  @include flexy(flex, row);
+  @extend %main-font;
+  font-weight: $font-weight--medium;
+}
+.chartjsLegend > ul {
+  @include flexy(flex, row);
+  justify-content: space-between;
 }

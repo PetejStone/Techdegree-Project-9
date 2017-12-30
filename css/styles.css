@@ -1,7 +1,7 @@
-.dashboard, input[placeholder], .alert, .traffic, .chart-nav {
+.dashboard, input[placeholder], .alert, .traffic, .chart-nav, .chartjsLegend li {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
-.alert, .line-chart, .bar-chart {
+.alert, .line-chart, .chart-row, .bar-chart {
   margin: 0 auto; }
 
 * {
@@ -466,7 +466,7 @@ template {
       flex-direction: column;
       justify-content: flex-start;
       width: 4em;
-      height: 100vh;
+      height: 100vw;
       align-items: center;
       position: absolute; }
       .sidebar > :nth-child(1n) {
@@ -538,8 +538,7 @@ input[placeholder] {
 .line-chart {
   margin-top: 3em;
   width: 90%;
-  padding-bottom: 2em;
-  border-bottom: 1px solid #d1d1d1; }
+  padding-bottom: 2em; }
 
 .traffic {
   font-weight: 400;
@@ -560,16 +559,37 @@ input[placeholder] {
       color: #fff;
       border-radius: 15px; }
 
-.line-chart {
-  border-bottom: 1px solid #d1d1d1; }
-
 .chart-row {
-  padding-right: 5em;
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  border-top: 1px solid #d1d1d1;
+  width: 90%;
+  border-bottom: 1px solid #d1d1d1; }
 
 .bar-chart {
   width: 50%;
   border-right: 1px solid #d1d1d1; }
+
+.doughnut-chart {
+  padding-left: 1em;
+  width: 50%; }
+
+.chartjsLegend li span {
+  right: 3em;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  border-radius: 5px; }
+
+.chartjsLegend li {
+  display: flex;
+  flex-direction: row;
+  font-weight: 400; }
+
+.chartjsLegend > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
 
 /*# sourceMappingURL=styles.css.map */
