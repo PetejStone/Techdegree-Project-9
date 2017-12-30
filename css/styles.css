@@ -1,7 +1,7 @@
 .dashboard, input[placeholder], .alert, .traffic, .chart-nav {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
-.alert, .weekly-chart {
+.alert, .line-chart, .bar-chart {
   margin: 0 auto; }
 
 * {
@@ -535,10 +535,11 @@ input[placeholder] {
   display: flex;
   flex-direction: row; }
 
-.weekly-chart {
+.line-chart {
   margin-top: 3em;
   width: 90%;
-  height: 1em; }
+  padding-bottom: 2em;
+  border-bottom: 1px solid #d1d1d1; }
 
 .traffic {
   font-weight: 400;
@@ -558,5 +559,17 @@ input[placeholder] {
       background-color: #69D36E;
       color: #fff;
       border-radius: 15px; }
+
+.line-chart {
+  border-bottom: 1px solid #d1d1d1; }
+
+.chart-row {
+  padding-right: 5em;
+  display: flex;
+  flex-direction: row; }
+
+.bar-chart {
+  width: 50%;
+  border-right: 1px solid #d1d1d1; }
 
 /*# sourceMappingURL=styles.css.map */

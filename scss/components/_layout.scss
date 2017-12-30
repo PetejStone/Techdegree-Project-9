@@ -164,11 +164,12 @@ input[placeholder] {
   @include flexy(flex, row);
 }
 
-.weekly-chart {
+.line-chart {
   margin-top: 3em;
   @extend %center;
   width: 90%;
-  height: 1em;
+  padding-bottom: 2em;
+  border-bottom: 1px solid $light-grey;
 }
 
 .traffic {
@@ -193,4 +194,20 @@ input[placeholder] {
         border-radius: 15px;
       }
     }
+}
+
+.line-chart {
+  border-bottom: 1px solid $light-grey;
+}
+
+.chart-row {
+  padding-right: 5em;
+  @include flexy(flex, row);
+
+}
+
+.bar-chart {
+  width: 50%;
+  @extend %center;
+  border-right: 1px solid $light-grey;
 }

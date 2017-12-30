@@ -48,43 +48,66 @@
     </div>
 
     <main>
-      <div class="dashboard">
-        <div class="dashboard--tab">
-            <p>Dashboard</p>
-        </div>
 
-        <div class="dashboard--search">
-            <form class="search" action="index.html" method="post">
-              <input type="search" id="search" name="user_search" placeholder="Search">
-              <span class="spyglass">&#x1F50D;</span>
-            </form>
-        </div>
-      </div>
+        <div class="dashboard">
+          <div class="dashboard--tab">
+              <p>Dashboard</p>
+          </div>
 
-
-        <div class="alert">
-          <p class="alert__text"><b>Alert!</b>  Nullam quis risus eget urna mullis onare vel eu leo.
-                Nullam id dolor id nibh ultrices vehicula ud et  elit.
-                Carabutir bladndit tempus portitor.</p>
-          <div class="alert__close">
-            <p><b>X</b></p>
+          <div class="dashboard--search">
+              <form class="search" action="index.html" method="post">
+                <input type="search" id="search" name="user_search" placeholder="Search">
+                <span class="spyglass">&#x1F50D;</span>
+              </form>
           </div>
         </div>
 
-      <div class="weekly-chart">
-        <div class="chart-top">
-          <h2 class="traffic">Traffic</h2>
 
-          <ul class="chart-nav">
-            <li>Hourly</li>
-            <li>Daily</li>
-            <li>Weekly</li>
-            <li>Monthly</li>
-          </ul>
+          <div class="alert">
+            <p class="alert__text"><b>Alert!</b>  Nullam quis risus eget urna mullis onare vel eu leo.
+                  Nullam id dolor id nibh ultrices vehicula ud et  elit.
+                  Carabutir bladndit tempus portitor.</p>
+            <div class="alert__close">
+              <p><b>X</b></p>
+            </div>
+          </div>
+
+        <div class="line-chart">
+          <div class="chart-top">
+            <h2 class="traffic">Traffic</h2>
+
+            <ul class="chart-nav">
+              <li>Hourly</li>
+              <li>Daily</li>
+              <li>Weekly</li>
+              <li>Monthly</li>
+            </ul>
+          </div>
+            <canvas id="lineChart" width="100" height="30"></canvas>
+            <script src="js/lineChart.js"></script>
         </div>
-          <canvas id="myChart" width="100" height="30"></canvas>
-          <script src="js/myChart.js"></script>
-      </div>
+
+        <div class="chart-row">
+
+          <div class="bar-chart">
+            <div class="chart-top">
+              <h2 class="traffic">Daily Traffic</h2>
+            </div>
+            <canvas id="barChart" width="100" height="50"></canvas>
+            <script src="js/barChart.js"></script>
+          </div>
+
+          <div class="bar-chart">
+            <div class="chart-top">
+              <h2 class="traffic">Daily Traffic</h2>
+            </div>
+            <canvas id="pieChart" width="100" height="50"></canvas>
+            <script src="js/pieChart.js"></script>
+          </div>
+
+        </div>
+
+
 
 
 

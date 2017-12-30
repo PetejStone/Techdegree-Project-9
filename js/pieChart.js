@@ -1,6 +1,6 @@
-var ctx = document.getElementById("myChart").getContext('2d');
-var myChart = new Chart(ctx, {
-    type: 'line',
+var ctx = document.getElementById("pieChart").getContext('2d');
+var pieChart = new Chart(ctx, {
+    type: 'pie',
     data: {
         labels: ['Week-1', 'Week-2', 'Week-3', 'Week-4', 'Week-5', 'Week-6', 'Week-7', 'Week-8'],
         datasets: [{
