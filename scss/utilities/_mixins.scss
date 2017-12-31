@@ -46,9 +46,9 @@
       @content;
     }
   }
-  
+
   @else if $size == 'large' {
-    @media (min-width: $brkpoint-large) {
+    @media (min-width: $brkpoint-lg) {
       @content;
     }
   }
