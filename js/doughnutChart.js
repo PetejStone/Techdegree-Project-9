@@ -2,7 +2,7 @@ var ctx = document.getElementById("doughnutChart").getContext('2d');
 var doughnutChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-        labels: ['<p>Phones</p>', '<p>Tablets</p>', '<p>Desktop</p>'],
+        labels: ['Phones', 'Tablets', 'Desktop'],
         datasets: [{
             label: 'Traffic',
             data: ["70", "13", "13"],

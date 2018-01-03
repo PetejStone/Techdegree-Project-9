@@ -173,7 +173,45 @@
 
      </div>
 
+<script src="https://randomuser.me/api/">
+$.ajax({
+  url: 'https://randomuser.me/api/',
+  dataType: 'json',
+  success: function(results) {
+     $("#div1").html(results);
+  }
+});
+
+</script>
+     <div class="members">
+       <div class="new-members">
+         <div class="member-1"></div>
+         <div class="member-2"></div>
+         <div class="member-3"></div>
+         <div class="member-4"></div>
+       </div>
+     </div>
+
+     <div class="members">
+       <div class="member-activity">
+
+         <div class="member-1"></div>
+
+         <div class="member-2"></div>
+
+         <div class="member-3"></div>
+
+         <div class="member-4"></div>
+
+       </div>
+
+     </div>
+
     </main>
+  <script
+  src="http://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
   <script src="js/main.js"></script>
   </body>
 </html>

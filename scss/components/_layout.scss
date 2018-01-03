@@ -248,7 +248,7 @@ input[placeholder] {
   margin-top: 3em;
   width: 90%;
   @extend %center;
-
+  padding-bottom: 2em;
   border-bottom: 1px solid $light-grey;
 }
 
@@ -290,4 +290,22 @@ input[placeholder] {
   font-size: 2em;
   margin: 0;
 
+}
+
+// #doughnutChart {
+//   transform: rotate(90deg);
+// }
+
+.members {
+  @include flexy(flex, row);
+
+}
+.new-members {
+  border-right: 1px solid $light-grey;
+  height: 20em;
+  width: 50%;
+  @extend %main-font;
+  & > :nth-child(1n):first-line {
+    text-transform: capitalize;
+  }
 }
