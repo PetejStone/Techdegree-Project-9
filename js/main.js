@@ -3,6 +3,8 @@ const alertBox = document.querySelector(".alert");
 let members = [];
 let allMembers = [];
 let newMembers = document.querySelector('.new-members');
+let memberActivity = document.querySelector('.member-activity');
+let randomPhoto = document.querySelectorAll('.memberPhoto');
 
 //Closes alert box when X is clicked
 alertClose.addEventListener('click', () => {
@@ -22,10 +24,15 @@ $.ajax({
     var email = members[i].email;
     var registered = members[i].registered;
     var photo = members[i].picture.thumbnail;
-    
+    var img = document.createElement("img");
+    img.src = photo;
 
-    var info ='<p>'+ firstName +' '+ lastName +'<br>'+ email +' '+ registered + '</p>';
-    newMembers.children[i].innerHTML = info;
+
+
+    var info = '<p>' + firstName +' '+ lastName +'<br>'+ email +' '+ registered + '</p>';
+    newMembers.children[i].innerHTML = "<img src="+ photo + " alt='' height='50px' width='50px'>" + info;
+    memberActivity.children[i].innerHTML =  "<img src="+ photo + " alt='' height='50px' width='50px'>" + info;
+
 
 
 

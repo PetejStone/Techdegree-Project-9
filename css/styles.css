@@ -1,7 +1,7 @@
-.dashboard, input[placeholder], .alert, .traffic, .chart-nav, .chartjsLegend li, .social, .stats, .new-members {
+.dashboard, input[placeholder], .alert, .traffic, .chart-nav, .chartjsLegend li, .social, .stats, .new-members, .member-activity {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
-.alert, .line-chart, .chart-row, .bar-chart, .widgets {
+.alert, .line-chart, .chart-row, .bar-chart, .widgets, .member-row {
   margin: 0 auto; }
 
 .sidebar:after {
@@ -643,14 +643,32 @@ input[placeholder] {
   margin: 0; }
 
 .members {
-  display: flex;
-  flex-direction: row; }
+  width: 50%; }
 
 .new-members {
   border-right: 1px solid #d1d1d1;
-  height: 20em;
-  width: 50%; }
+  width: 100%; }
   .new-members > :nth-child(1n):first-line {
     text-transform: capitalize; }
+
+.member-activity {
+  height: 20em;
+  width: 100%; }
+  .member-activity > :nth-child(1n):first-line {
+    text-transform: capitalize; }
+
+.member-row {
+  display: flex;
+  flex-direction: row;
+  width: 90%; }
+
+.member {
+  display: flex;
+  flex-direction: row;
+  padding: 1em;
+  border-bottom: 1px solid #d1d1d1; }
+  .member > img {
+    margin-right: 2em;
+    border-radius: 50%; }
 
 /*# sourceMappingURL=styles.css.map */

@@ -297,15 +297,40 @@ input[placeholder] {
 // }
 
 .members {
-  @include flexy(flex, row);
-
+  // @include flexy(flex, row);
+  width: 50%;
 }
 .new-members {
   border-right: 1px solid $light-grey;
-  height: 20em;
-  width: 50%;
+  width: 100%;
   @extend %main-font;
   & > :nth-child(1n):first-line {
     text-transform: capitalize;
+  }
+}
+
+.member-activity {
+  height: 20em;
+  width: 100%;
+  @extend %main-font;
+  & > :nth-child(1n):first-line {
+    text-transform: capitalize;
+  }
+}
+
+.member-row {
+  @include flexy(flex, row);
+  width: 90%;
+  @extend %center;
+
+}
+
+.member {
+  @include flexy(flex, row);
+  padding: 1em;
+  border-bottom: 1px solid $light-grey;
+  & > img {
+    margin-right: 2em;
+    border-radius: 50%;
   }
 }
