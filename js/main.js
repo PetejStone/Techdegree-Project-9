@@ -5,7 +5,7 @@ let allMembers = [];
 let newMembers = document.querySelector('.new-members');
 let memberActivity = document.querySelector('.member-activity');
 let randomPhoto = document.querySelectorAll('.memberPhoto');
-
+let member = document.querySelectorAll('.member');
 //Closes alert box when X is clicked
 alertClose.addEventListener('click', () => {
   alertBox.style.display = 'none';
