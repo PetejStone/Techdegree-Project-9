@@ -1,4 +1,4 @@
-.dashboard, input[placeholder], .alert, .traffic, .chart-nav, .chartjsLegend li, .social, .stats, .new-members,
+.dashboard, input[placeholder], .alert, .heading, .chart-nav, .chartjsLegend li, .social, .stats, .new-members,
 .user, .member-activity, #message-user, .send, .search-user > input,
 textarea, .settings, .settings-switch > p, .save, .cancel {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
@@ -553,9 +553,15 @@ input[placeholder] {
   width: 90%;
   padding-bottom: 2em; }
 
-.traffic {
+.heading {
   font-weight: 400;
-  color: #d1d1d1; }
+  color: #d1d1d1;
+  margin: 1em 0 0 0; }
+  .heading--social {
+    margin-left: 2em;
+    margin-bottom: 5px; }
+  .heading--members {
+    margin-left: 1em; }
 
 .chart-nav {
   width: 95%;
@@ -563,6 +569,10 @@ input[placeholder] {
   display: flex;
   flex-direction: row;
   justify-content: flex-end; }
+  .chart-nav > :nth-child(3n) {
+    background-color: #69D36E;
+    color: #fff;
+    border-radius: 15px; }
   .chart-nav li {
     padding: 10px;
     margin-left: 5px; }
@@ -609,7 +619,6 @@ input[placeholder] {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: 3em;
   width: 90%;
   padding-bottom: 2em;
   border-bottom: 1px solid #d1d1d1; }
@@ -652,7 +661,6 @@ input[placeholder] {
 
 .new-members,
 .user {
-  border-right: 1px solid #d1d1d1;
   width: 100%;
   display: flex;
   flex-direction: column; }
@@ -669,6 +677,9 @@ input[placeholder] {
   display: flex;
   flex-direction: row;
   width: 90%; }
+  .member-row > :first-child,
+  .widget-row > :first-child {
+    border-right: 1px solid #d1d1d1; }
 
 .member {
   display: flex;
@@ -680,6 +691,8 @@ input[placeholder] {
     border-radius: 50%; }
   .member > :nth-child(1n):first-line {
     text-transform: capitalize; }
+  .member > p {
+    margin: 0; }
 
 .search-user {
   padding: 1em;
@@ -815,7 +828,7 @@ input:checked + .slider:after {
 .timezones {
   height: 4em;
   width: 100%;
-  margin-bottom: 3em; }
+  margin-bottom: 1.5em; }
 
 .save {
   width: 48%;

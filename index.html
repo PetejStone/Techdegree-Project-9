@@ -74,24 +74,38 @@
 
         <div class="line-chart">
           <div class="chart-top">
-            <h2 class="traffic">Traffic</h2>
+            <h2 class="heading">Traffic</h2>
 
             <ul class="chart-nav">
-              <li>Hourly</li>
-              <li>Daily</li>
-              <li>Weekly</li>
-              <li>Monthly</li>
+              <li class="hourly">Hourly</li>
+              <li class="daily">Daily</li>
+              <li class="weekly">Weekly</li>
+              <li class="monthly">Monthly</li>
             </ul>
           </div>
-            <canvas id="lineChart" width="100" height="30"></canvas>
-            <script src="js/lineChart.js"></script>
+            <div class="weekly-chart">
+              <canvas id="weeklyChart" width="100" height="30"></canvas>
+              <script src="js/weeklyChart.js"></script>
+            </div>
+            <div class="daily-chart" style="display: none;">
+              <canvas id="dailyChart" width="100" height="30"></canvas>
+              <script src="js/dailyChart.js"></script>
+            </div>
+            <div class="hourly-chart" style="display: none;">
+              <canvas id="hourlyChart" width="100" height="30"></canvas>
+              <script src="js/hourlyChart.js"></script>
+            </div>
+            <div class="monthly-chart" style="display: none;">
+              <canvas id="monthlyChart" width="100" height="30"></canvas>
+              <script src="js/monthlyChart.js"></script>
+            </div>
         </div>
 
         <div class="chart-row">
 
           <div class="bar-chart">
             <div class="chart-top">
-              <h2 class="traffic">Daily Traffic</h2>
+              <h2 class="heading">Daily Traffic</h2>
             </div>
             <canvas id="barChart" width="100" height="50"></canvas>
             <script src="js/barChart.js"></script>
@@ -99,7 +113,7 @@
 
           <div class="doughnut-chart">
             <div class="chart-top">
-              <h2 class="traffic">Mobile Users</h2>
+              <h2 class="heading">Mobile Users</h2>
             </div>
             <div class="chart-flex">
               <canvas id="doughnutChart" width="100" height="50"></canvas>
@@ -130,53 +144,58 @@
         </svg>
 
       <!--End of Reusable Icons  -->
-      <div class="widgets">
-        <div class="box">
 
+      <div class="social">
+        <h3 class="heading heading--social">SOCIAL STATS</h3>
+        <div class="widgets">
 
-          <div class="icon">
-            <svg width="35" height="35">
-              <use xlink:href="#twitter" fill="white" />
-            </svg>
+          <div class="box">
+            <div class="icon">
+              <svg width="35" height="35">
+                <use xlink:href="#twitter" fill="white" />
+              </svg>
+            </div>
+            <div class="widget--content">
+              <h2 class="social">Twitter</h2>
+              <p class="stats">10,325</p>
+            </div>
           </div>
-          <div class="widget--content">
-            <h2 class="social">Twitter</h2>
-            <p class="stats">10,325</p>
+
+
+          <div class="box">
+            <div class="icon">
+              <svg width="35" height="35">
+                <use xlink:href="#facebook" fill="white" />
+              </svg>
+            </div>
+            <div class="widget--content">
+              <h2 class="social">Facebook</h2>
+              <p class="stats">10,325</p>
+            </div>
           </div>
-        </div>
 
 
-        <div class="box">
-          <div class="icon">
-            <svg width="35" height="35">
-              <use xlink:href="#facebook" fill="white" />
-            </svg>
+
+          <div class="box">
+            <div class="icon">
+              <svg width="35" height="35">
+                <use xlink:href="#google" fill="white" />
+              </svg>
+            </div>
+            <div class="widget--content">
+              <h2 class="social">Google</h2>
+              <p class="stats">10,325</p>
+            </div>
           </div>
-          <div class="widget--content">
-            <h2 class="social">Facebook</h2>
-            <p class="stats">10,325</p>
-          </div>
-        </div>
 
-
-        <div class="box">
-          <div class="icon">
-            <svg width="35" height="35">
-              <use xlink:href="#google" fill="white" />
-            </svg>
-          </div>
-          <div class="widget--content">
-            <h2 class="social">Google</h2>
-            <p class="stats">10,325</p>
-          </div>
-        </div>
-
-     </div>
-
+       </div>
+    </div>
 
      <div class="member-row">
        <div class="members">
+         <h4 class="heading heading--members">MEMBER ACTIVITY</h4>
          <div class="new-members">
+
            <div class="member"></div>
            <div class="member"></div>
            <div class="member"></div>
@@ -185,7 +204,9 @@
        </div>
 
        <div class="members">
+         <h4 class="heading heading--members">MEMBER ACTIVITY</h4>
          <div class="member-activity">
+
 
            <div class="member"></div>
 
@@ -202,7 +223,7 @@
      <div class="widget-row">
        <div class="widget">
          <div class="user">
-           <h3>MESSAGE USER</h3>
+           <h3 class="heading">MESSAGE USER</h3>
            <form class="search-user" action="index.html" method="post">
              <input type="search" id="search-user" name="user_search" placeholder="Search for User">
            </form>
@@ -218,7 +239,7 @@
 
        <div class="widget">
          <div class="settings">
-           <h3>SETTINGS</h3>
+           <h3 class="heading">SETTINGS</h3>
            <div class="settings-switch">
               <p>Send Email Notifications</p>
               <!-- Rounded switch -->

@@ -178,10 +178,18 @@ input[placeholder] {
   padding-bottom: 2em;
 }
 
-.traffic {
+.heading {
   @extend %main-font;
   font-weight: $font-weight--medium;
   color: $light-grey;
+  margin: 1em 0 0 0;
+  &--social{
+    margin-left: 2em;
+    margin-bottom: 5px;
+  }
+  &--members {
+    margin-left: 1em;
+  }
 }
 
 .chart-nav {
@@ -190,6 +198,11 @@ input[placeholder] {
   font-weight: $font-weight--medium;
   @include flexy(flex, row);
   justify-content: flex-end;
+  & > :nth-child(3n){
+    background-color: $nav-highlight;
+    color: $white;
+    border-radius: 15px;
+  }
     & li {
       padding: 10px;
       margin-left: 5px;
@@ -246,7 +259,6 @@ input[placeholder] {
 .widgets {
   @include flexy(flex, row);
   justify-content: space-around;
-  margin-top: 3em;
   width: 90%;
   @extend %center;
   padding-bottom: 2em;
@@ -304,7 +316,6 @@ input[placeholder] {
 }
 .new-members,
 .user {
-  border-right: 1px solid $light-grey;
   width: 100%;
   @extend %main-font;
   @include flexy(flex, column);
@@ -327,7 +338,9 @@ input[placeholder] {
   @include flexy(flex, row);
   width: 90%;
   @extend %center;
-
+  & > :first-child {
+    border-right: 1px solid $light-grey;
+  }
 }
 
 .member {
@@ -340,7 +353,9 @@ input[placeholder] {
   }
   & > :nth-child(1n):first-line {
       text-transform: capitalize;
-
+  }
+  & > p {
+    margin: 0;
   }
 }
 
@@ -513,7 +528,7 @@ input:checked + .slider:after {
 .timezones {
   height: 4em;
   width: 100%;
-  margin-bottom: 3em;
+  margin-bottom: 1.5em;
 
 }
 

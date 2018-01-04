@@ -1,11 +1,12 @@
-var ctx = document.getElementById("lineChart").getContext('2d');
-var lineChart = new Chart(ctx, {
+//Daily
+var ctx = document.getElementById("dailyChart").getContext('2d');
+var dailyChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['Week-1', 'Week-2', 'Week-3', 'Week-4', 'Week-5', 'Week-6', 'Week-7', 'Week-8'],
+        labels: ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
         datasets: [{
             label: 'Traffic',
-            data: ["500", "1000", "800", "1200", "1000", "1300", "1200", "1500", "1400", "1800", "1700", "200"],
+            data: ["120", "200", "75", "80","180","210","280"],
             backgroundColor: [
               'rgba(191, 162, 215, 0.2)',
 
