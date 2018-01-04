@@ -55,6 +55,12 @@ alertClose.addEventListener('click', () => {
 
 //Changes chart display when 'weekly', 'hourly', etc is clicked
 
+//display when page loads
+weeklyChartToggle.style.display = 'block';
+hourlyChartToggle.style.display = 'none';
+dailyChartToggle.style.display ='none';
+monthlyChartToggle.style.display ='none';
+
 hourly.addEventListener('click', ()=> {
   weeklyChartToggle.style.display = 'none';
   hourlyChartToggle.style.display = 'block';
@@ -154,6 +160,6 @@ monthly.addEventListener('click', ()=> {
   daily.style.borderRadius = "initial";
   daily.style.color = "initial";
 
-  
+
 
 })

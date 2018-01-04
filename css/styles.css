@@ -527,7 +527,7 @@ input[placeholder] {
   @media (min-width: 768px) {
     .spyglass {
       right: 1.5em;
-      top: 5.5em; } }
+      top: 5.7em; } }
 
 .alert {
   display: flex;
