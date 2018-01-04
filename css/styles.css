@@ -1,5 +1,5 @@
 .dashboard, input[placeholder], .alert, .traffic, .chart-nav, .chartjsLegend li, .social, .stats, .new-members,
-.user, .member-activity, #message-user, .send, input,
+.user, .member-activity, #message-user, .send, .search-user > input,
 textarea {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
@@ -526,8 +526,8 @@ input[placeholder] {
   top: 9em; }
   @media (min-width: 768px) {
     .spyglass {
-      right: 2em;
-      top: 7em; } }
+      right: 1.5em;
+      top: 5.5em; } }
 
 .alert {
   display: flex;
@@ -709,7 +709,7 @@ input[placeholder] {
   font-weight: 700;
   letter-spacing: 1px; }
 
-input,
+.search-user > input,
 textarea {
   font-size: 1.2em;
   padding: 1em; }

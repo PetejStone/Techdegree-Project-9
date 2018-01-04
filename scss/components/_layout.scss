@@ -143,8 +143,8 @@ input[placeholder] {
   right: 1em;
   top: 9em;
     @include mq(medium){
-    right: 2em;
-    top: 7em;
+    right: 1.5em;
+    top: 5.5em;
 }
 }
 .alert {
@@ -383,7 +383,7 @@ input[placeholder] {
 
 }
 
-input,
+.search-user > input,
 textarea {
   font-size: 1.2em;
   padding: 1em;
