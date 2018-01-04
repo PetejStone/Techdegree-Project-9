@@ -1,10 +1,10 @@
 .dashboard, input[placeholder], .alert, .traffic, .chart-nav, .chartjsLegend li, .social, .stats, .new-members,
 .user, .member-activity, #message-user, .send, .search-user > input,
-textarea {
+textarea, .settings, .settings-switch > p, .save, .cancel {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 .alert, .line-chart, .chart-row, .bar-chart, .widgets, .member-row,
-.widget-row, .search-user, .message-user, .send {
+.widget-row, .search-user, .message-user, .send, .settings, .save, .cancel {
   margin: 0 auto; }
 
 .sidebar:after {
@@ -657,6 +657,9 @@ input[placeholder] {
   display: flex;
   flex-direction: column; }
 
+.user {
+  padding: 1em; }
+
 .member-activity {
   height: 20em;
   width: 100%; }
@@ -695,7 +698,7 @@ input[placeholder] {
 
 #message-user {
   width: 100%;
-  height: 10em;
+  height: 6em;
   border-radius: 5px;
   border: 1px solid #d1d1d1;
   background-color: #f9f9f9; }
@@ -720,5 +723,118 @@ textarea::-webkit-input-placeholder {
 
 button:hover {
   cursor: pointer; }
+
+.settings {
+  padding: 1em;
+  width: 90%; }
+
+.settings-switch {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2em;
+  margin-top: 2em; }
+  .settings-switch > p {
+    margin: 0; }
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px; }
+
+/* Hide default HTML checkbox */
+.switch input {
+  display: none; }
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s; }
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s; }
+
+input:checked + .slider {
+  background-color: #65619E; }
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #65619E; }
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(60px);
+  -ms-transform: translateX(26px);
+  transform: translateX(60px); }
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+  width: 6em; }
+
+.slider.round:before {
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px 1px; }
+
+label.switch {
+  width: 5em; }
+
+/*------ ADDED CSS ---------*/
+.slider:after {
+  content: 'OFF';
+  color: white;
+  display: block;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 65%;
+  font-size: 12px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+input:checked + .slider:after {
+  content: 'ON';
+  top: 50%;
+  left: 40%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+.timezones {
+  height: 4em;
+  width: 100%;
+  margin-bottom: 3em; }
+
+.save {
+  width: 48%;
+  height: 4em;
+  border-radius: 5px;
+  background-color: #65619E;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 1px;
+  float: left; }
+
+.cancel {
+  width: 48%;
+  height: 4em;
+  border-radius: 5px;
+  background-color: #d1d1d1;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 1px;
+  float: right; }
 
 /*# sourceMappingURL=styles.css.map */
