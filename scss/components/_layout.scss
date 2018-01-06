@@ -353,9 +353,8 @@ input[placeholder] {
     align-items: left;
     border-bottom: none;
     padding: 0;
-    & > :first-child {
-    text-transform: capitalize;
-   }
+    margin-right: auto;
+
   }
   &--img {
     border-bottom: none;

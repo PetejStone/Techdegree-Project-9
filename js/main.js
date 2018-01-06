@@ -38,8 +38,9 @@ $.ajax({
     members = data.results;
 
   for (i = 0; i < members.length; i+=1) {
-    var firstName = members[i].name.first;
-    var lastName = members[i].name.last;
+    //Random user generator variables
+    var firstName = members[i].name.first[0].toUpperCase() + members[i].name.first.substring(1);
+    var lastName = members[i].name.last[0].toUpperCase() + members[i].name.last.substring(1);
     var email = members[i].email;
     var registered = members[i].registered;
     var photo = members[i].picture.thumbnail;
@@ -47,17 +48,31 @@ $.ajax({
     var randomNumber = Math.floor(Math.random() * 6 ) + 2;
     img.src = photo;
     var image = "<img src="+ photo + " alt='' height='50px' width='50px'>";
-
-    var name = '<p>' + firstName +' '+ lastName+ "</p>";
+// name and email variables
+    var name = firstName +' '+ lastName;
     var email = '<p>'+ email; +'</p>';
+// Random time stamp variable
     var time = '<p>'+ randomTime() + " hours ago" + '</p>';
 
+
+//Adds image to the new member widget and recent activity widget
     newMembers.children[i].children[0].innerHTML = image;
     recentActivity.children[i].children[0].innerHTML = image;
+//Adds name and email to the new members widget and name and time to the recent activity widget
+    newMembers.children[i].children[1].innerHTML = "<p>"+name+"</p>" + email;
+    recentActivity.children[i].children[1].children[0].insertAdjacentHTML('afterbegin', name);
+    recentActivity.children[i].children[1].children[0].insertAdjacentHTML('afterend', time);
+// Target the email only from the new members widget and changes the color
+    newMembers.children[i].children[1].children[1].style.color = '#65619E';
 
-    newMembers.children[i].children[1].innerHTML = name + email;
-    recentActivity.children[i].children[1].innerHTML = name + time;
+    //----------------
+    //Search User function
+    //----------------
 
+    // var searchbar = document.querySelector("#search-user");
+    // function searchUser() {
+    //   if (searchbar.input.value ===
+    // }
 
 }
 }});
@@ -68,8 +83,9 @@ alertClose.addEventListener('click', () => {
   alertBox.style.display = 'none';
 })
 
-//Changes chart display when 'weekly', 'hourly', etc is clicked
-
+//------------------------------------------------------------------------
+//Changes chart display when 'weekly', 'hourly', etc is clicked//
+//-------------------------------------------------------------------------
 //display when page loads
 weeklyChartToggle.style.display = 'block';
 hourlyChartToggle.style.display = 'none';
@@ -174,7 +190,19 @@ monthly.addEventListener('click', ()=> {
   daily.style.backgroundColor = 'initial';
   daily.style.borderRadius = "initial";
   daily.style.color = "initial";
-
-
-
 })
+//--------------------------------
+//End
+//--------------------------------
+
+
+//----------------
+//Search User function
+//----------------
+
+var searchbar = document.querySelector("#search-user");
+function searchUser() {
+  if (searchbar.input.value === members[0].name.first + members[0].name.last) {
+    console.log('woo');
+  }
+}

@@ -692,9 +692,8 @@ input[placeholder] {
     flex-direction: column;
     align-items: left;
     border-bottom: none;
-    padding: 0; }
-    .member--info > :first-child {
-      text-transform: capitalize; }
+    padding: 0;
+    margin-right: auto; }
   .member--img {
     border-bottom: none; }
   .member > img {
