@@ -1,5 +1,5 @@
 .dashboard, input[placeholder], .alert, .heading, .chart-nav, .chartjsLegend li, .social, .stats, .new-members,
-.user, .member-activity, #message-user, .send, .search-user > input,
+.user, .recent-activity, #message-user, .send, .search-user > input,
 textarea, .settings, .settings-switch > p, .save, .cancel {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
@@ -668,7 +668,7 @@ input[placeholder] {
 .user {
   padding: 1em; }
 
-.member-activity {
+.recent-activity {
   height: 20em;
   width: 100%; }
 
@@ -684,15 +684,26 @@ input[placeholder] {
 .member {
   display: flex;
   flex-direction: row;
+  align-items: center;
   padding: 1em;
   border-bottom: 1px solid #d1d1d1; }
+  .member--info {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    border-bottom: none; }
+    .member--info > :first-child {
+      text-transform: capitalize; }
+  .member--img {
+    border-bottom: none; }
   .member > img {
     margin-right: 2em;
     border-radius: 50%; }
-  .member > :nth-child(1n):first-line {
-    text-transform: capitalize; }
   .member > p {
-    margin: 0; }
+    margin: 0;
+    font-size: 12px; }
+    .member > p.date {
+      margin-left: auto; }
 
 .search-user {
   padding: 1em;

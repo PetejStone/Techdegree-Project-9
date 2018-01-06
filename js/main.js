@@ -15,13 +15,21 @@ const dailyChartToggle = document.querySelector(".daily-chart");
 //variables for random user generator
 let members = [];
 let allMembers = [];
-let newMembers = document.querySelector(".new-members");
-let memberActivity = document.querySelector(".member-activity");
+let member = document.querySelector(".member");
+let memberNew = document.querySelectorAll(".member--new");
+let memberActivity = document.querySelectorAll(".member--activity");
 let randomPhoto = document.querySelectorAll(".memberPhoto");
-let member = document.querySelectorAll(".member");
+let membersRandom = document.querySelectorAll(".member");
+let memberInfo = document.querySelectorAll(".member--info");
+let memberImg = document.querySelectorAll(".member--img");
+let newMembers = document.querySelector(".new-members");
+let recentActivity = document.querySelector(".recent-activity");
 
 
-
+function randomTime() {
+  randomNumber = Math.floor(Math.random() * 6 ) + 2;
+  return randomNumber;
+}
 //Random User Generator
 $.ajax({
   url: 'https://randomuser.me/api/?results=4&inc=name,picture,email,registered',
@@ -36,13 +44,20 @@ $.ajax({
     var registered = members[i].registered;
     var photo = members[i].picture.thumbnail;
     var img = document.createElement("img");
+    var randomNumber = Math.floor(Math.random() * 6 ) + 2;
     img.src = photo;
+    var image = "<img src="+ photo + " alt='' height='50px' width='50px'>";
 
+    var name = '<p>' + firstName +' '+ lastName+ "</p>";
+    var email = '<p>'+ email; +'</p>';
+    var time = '<p>'+ randomTime() + " hours ago" + '</p>';
 
+    newMembers.children[i].children[0].innerHTML = image;
+    recentActivity.children[i].children[0].innerHTML = image;
 
-    var info = '<p>' + firstName +' '+ lastName +'<br>'+ email +' '+ registered + '</p>';
-    newMembers.children[i].innerHTML = "<img src="+ photo + " alt='' height='50px' width='50px'>" + info;
-    memberActivity.children[i].innerHTML =  "<img src="+ photo + " alt='' height='50px' width='50px'>" + info;
+    newMembers.children[i].children[1].innerHTML = name + email;
+    recentActivity.children[i].children[1].innerHTML = name + time;
+
 
 }
 }});

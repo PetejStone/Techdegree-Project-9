@@ -326,7 +326,7 @@ input[placeholder] {
   padding: 1em;
 }
 
-.member-activity {
+.recent-activity {
   height: 20em;
   width: 100%;
   @extend %main-font;
@@ -345,17 +345,34 @@ input[placeholder] {
 
 .member {
   @include flexy(flex, row);
+  align-items: center;
   padding: 1em;
   border-bottom: 1px solid $light-grey;
+  &--info {
+    @include flexy(flex, column);
+    align-items: left;
+    border-bottom: none;
+    & > :first-child {
+    text-transform: capitalize;
+   }
+  }
+  &--img {
+    border-bottom: none;
+  }
   & > img {
     margin-right: 2em;
     border-radius: 50%;
   }
-  & > :nth-child(1n):first-line {
-      text-transform: capitalize;
-  }
+  // & > :nth-child(1n):first-line {
+  //     text-transform: capitalize;
+  // }
   & > p {
     margin: 0;
+    font-size: 12px;
+    &.date {
+      margin-left:auto
+    }
+
   }
 }
 
