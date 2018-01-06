@@ -158,13 +158,25 @@ input[placeholder] {
   border-radius: 5px;
   background-color: $main-color;
   padding: .5em;
-
+  &--invalid,
+  &--success {
+    position: fixed;
+    bottom: 50%;
+    height: 10em;
+    width: 75%;
+    margin: 0 auto;
+    & > p {
+      margin: auto;
+  }
+}
     &__close {
       padding: 5px;
       &:hover {
         cursor: pointer;
       }
   }
+
+
 }
 
 .chart-top {
@@ -573,4 +585,8 @@ input:checked + .slider:after {
   font-weight: $font-weight--bold;
   letter-spacing: 1px;
   float: right;
+}
+
+.error--box {
+  height: 5em;
 }

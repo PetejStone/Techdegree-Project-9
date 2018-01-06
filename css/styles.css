@@ -539,6 +539,14 @@ input[placeholder] {
   border-radius: 5px;
   background-color: #7F54B0;
   padding: .5em; }
+  .alert--invalid, .alert--success {
+    position: fixed;
+    bottom: 50%;
+    height: 10em;
+    width: 75%;
+    margin: 0 auto; }
+    .alert--invalid > p, .alert--success > p {
+      margin: auto; }
   .alert__close {
     padding: 5px; }
     .alert__close:hover {
@@ -859,5 +867,8 @@ input:checked + .slider:after {
   font-weight: 700;
   letter-spacing: 1px;
   float: right; }
+
+.error--box {
+  height: 5em; }
 
 /*# sourceMappingURL=styles.css.map */

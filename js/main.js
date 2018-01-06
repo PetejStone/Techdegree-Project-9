@@ -68,11 +68,21 @@ $.ajax({
     //----------------
     //Search User function
     //----------------
+    var sendButton = document.querySelector('.send');
+    var searchbar = document.querySelector("#search-user");
+    var alertSuccess = document.querySelector(".alert--success");
+    var alertInvalid = document.querySelector(".alert--invalid");
 
-    // var searchbar = document.querySelector("#search-user");
-    // function searchUser() {
-    //   if (searchbar.input.value ===
-    // }
+  
+
+      sendButton.addEventListener('click', () => {
+        if (searchbar.value === name) {
+          alertSuccess.style.display = 'block';
+        } else {
+          alertInvalid.style.display = 'block';
+        }
+      })
+
 
 }
 }});
