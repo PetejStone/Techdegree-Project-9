@@ -14,10 +14,15 @@
           <div class="nav__heading">
             <span class="title-one">Your</span><span class="title-two">App&trade;</span>
           </div>
-              <div class="alert alert--notification" style="display:none;" >
-                 <p>You have <b>2</b> notifications!</p>
+              <div class="alert alert--bell" style="display:none;">
+                 <p class="alert--text">You have<b> 2</b> notifications!</p>
                        <span class="alert__close" onclick="this.parentElement.style.display='none';">&times;</span>
               </div>
+              <div class="alert alert--notification" style='display:none;'>
+                <span class="alert__close" onclick="this.parentElement.style.display='none';">&times;</span>
+                <p>You have a new message!</p><p>You have two new followers!</p>
+              </div>
+
           <ul class="nav__list">
             <li class="nav__item"><span class="notification">  </span></li>
             <li class="nav__item"><img class="bell" src="icons/icon-bell.svg" alt="bell"></li>
@@ -70,6 +75,7 @@
                    Carabutir bladndit tempus portitor.</p>
                    <span class="alert__close" onclick="this.parentElement.style.display='none';">&times;</span>
           </div>
+
 
         <div class="line-chart">
           <div class="chart-top">
@@ -273,7 +279,7 @@
               <span class="alert__close" onclick="this.parentElement.style.display='none';">&times;</span>
               <p>Sorry, the user does not exist!</p>
            </div>
-        
+
          </div>
        </div>
 

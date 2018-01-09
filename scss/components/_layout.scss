@@ -164,19 +164,37 @@ input[placeholder] {
   border-radius: 5px;
   background-color: $main-color;
   padding: .5em;
-  &--notification {
+  &--bell {
     background-color: #69D36E;
     width: 6em;
     height: 3em;
     position: absolute;
     right: 15em;
       & > p {
+        background-color: inherit;
         font-size: 12px;
         margin: auto;
         letter-spacing:.75px;
+        &:hover {
+          cursor: pointer;
+        }
       }
-
   }
+  &--notification {
+    background-color: #69D36E;
+    display: flex;
+    flex-direction: row;
+    width: 19em;
+    height: 3em;
+    z-index: 100;
+    position: absolute;
+    top: 7px;
+    right: 15em;
+    align-items: center;
+      & > p {
+        margin: 0;
+      }
+    }
   &--invalid,
   &--success {
     position: fixed;

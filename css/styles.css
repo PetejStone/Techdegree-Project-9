@@ -543,16 +543,32 @@ input[placeholder] {
   border-radius: 5px;
   background-color: #7F54B0;
   padding: .5em; }
-  .alert--notification {
+  .alert--bell {
     background-color: #69D36E;
     width: 6em;
     height: 3em;
     position: absolute;
     right: 15em; }
-    .alert--notification > p {
+    .alert--bell > p {
+      background-color: inherit;
       font-size: 12px;
       margin: auto;
       letter-spacing: .75px; }
+      .alert--bell > p:hover {
+        cursor: pointer; }
+  .alert--notification {
+    background-color: #69D36E;
+    display: flex;
+    flex-direction: row;
+    width: 19em;
+    height: 3em;
+    z-index: 100;
+    position: absolute;
+    top: 7px;
+    right: 15em;
+    align-items: center; }
+    .alert--notification > p {
+      margin: 0; }
   .alert--invalid, .alert--success {
     position: fixed;
     bottom: 50%;

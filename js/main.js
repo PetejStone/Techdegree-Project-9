@@ -3,7 +3,9 @@ const alertClose = document.querySelector(".alert__close");
 const alertBox = document.querySelector(".alert");
 const bell = document.querySelector(".bell");
 const notification = document.querySelector('.notification');
-const notificationBox = document.querySelector(".alert--notification");
+const notificationBox = document.querySelector(".alert--bell");
+const alertText = document.querySelector('.alert--text');
+const alertNotification = document.querySelector('.alert--notification');
 //variables for nav charts
 const hourly = document.querySelector(".hourly");
 const daily = document.querySelector(".daily");
@@ -134,6 +136,11 @@ alertClose.addEventListener('click', () => {
 bell.addEventListener('click', ()=> {
   notificationBox.style.display = 'inherit';
   notification.style.display = 'none'
+})
+
+alertText.addEventListener('click', ()=> {
+  notificationBox.style.display = 'none';
+  alertNotification.style.display = 'inherit';
 })
 
 //------------------------------------------------------------------------
