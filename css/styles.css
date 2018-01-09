@@ -546,7 +546,8 @@ input[placeholder] {
     width: 75%;
     margin: 0 auto; }
     .alert--invalid > p, .alert--success > p {
-      margin: auto; }
+      font-size: 2em;
+      text-align: center; }
   .alert__close {
     padding: 5px; }
     .alert__close:hover {
@@ -704,6 +705,8 @@ input[placeholder] {
     margin-right: auto; }
   .member--img {
     border-bottom: none; }
+  .member--email {
+    color: #7F54B0; }
   .member > img {
     border-radius: 50%; }
   .member > p {

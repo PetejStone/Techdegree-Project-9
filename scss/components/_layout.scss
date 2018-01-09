@@ -166,7 +166,8 @@ input[placeholder] {
     width: 75%;
     margin: 0 auto;
     & > p {
-      margin: auto;
+      font-size: 2em;
+      text-align: center;
   }
 }
     &__close {
@@ -366,10 +367,12 @@ input[placeholder] {
     border-bottom: none;
     padding: 0;
     margin-right: auto;
-
   }
   &--img {
     border-bottom: none;
+  }
+  &--email{
+    color: $main-color;
   }
   & > img {
     border-radius: 50%;
