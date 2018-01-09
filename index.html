@@ -13,15 +13,17 @@
         <div class="nav-container">
           <div class="nav__heading">
             <span class="title-one">Your</span><span class="title-two">App&trade;</span>
-           </div>
-
+          </div>
+              <div class="alert alert--notification" style="display:none;" >
+                 <p>You have <b>2</b> notifications!</p>
+                       <span class="alert__close" onclick="this.parentElement.style.display='none';">&times;</span>
+              </div>
           <ul class="nav__list">
             <li class="nav__item"><span class="notification">  </span></li>
             <li class="nav__item"><img class="bell" src="icons/icon-bell.svg" alt="bell"></li>
             <li  class="nav__item"><img class="profile-pic" src="img/peter.jpg" alt="profilepic"></li>
             <li class="nav__item"><span class="name"> Peter Stone </span></li>
           </ul>
-
         </div>
       </nav>
     </header>
@@ -62,14 +64,11 @@
           </div>
         </div>
 
-
-          <div class="alert">
-            <p class="alert__text"><b>Alert!</b>  Nullam quis risus eget urna mullis onare vel eu leo.
-                  Nullam id dolor id nibh ultrices vehicula ud et  elit.
-                  Carabutir bladndit tempus portitor.</p>
-            <div class="alert__close">
-              <p><b>X</b></p>
-            </div>
+          <div class="alert alert--top">
+             <p><b>Alert!</b> Nullam quis risus eget urna mullis onare vel eu leo.
+                   Nullam id dolor id nibh ultrices vehicula ud et  elit.
+                   Carabutir bladndit tempus portitor.</p>
+                   <span class="alert__close" onclick="this.parentElement.style.display='none';">&times;</span>
           </div>
 
         <div class="line-chart">
@@ -266,7 +265,7 @@
            <button class="send" type="submit" name="button">SEND</button>
 
            <div class="alert alert--success" style="display:none;">
-              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+              <span class="alert__close" onclick="this.parentElement.style.display='none';">&times;</span>
               <p>Form Sent</p>
            </div>
 
@@ -274,7 +273,7 @@
               <span class="alert__close" onclick="this.parentElement.style.display='none';">&times;</span>
               <p>Sorry, the user does not exist!</p>
            </div>
-
+        
          </div>
        </div>
 

@@ -39,6 +39,9 @@
   margin-right: 2em;
   padding-right: 1em;
   border-right: 1px solid $black;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .notification {
@@ -51,6 +54,9 @@
   position: absolute;
   top: 14px;
   right: 202px;
+    &:hover {
+      cursor: pointer;
+    }
 }
 
 .profile-pic {
@@ -158,6 +164,19 @@ input[placeholder] {
   border-radius: 5px;
   background-color: $main-color;
   padding: .5em;
+  &--notification {
+    background-color: #69D36E;
+    width: 6em;
+    height: 3em;
+    position: absolute;
+    right: 15em;
+      & > p {
+        font-size: 12px;
+        margin: auto;
+        letter-spacing:.75px;
+      }
+
+  }
   &--invalid,
   &--success {
     position: fixed;
@@ -176,6 +195,7 @@ input[placeholder] {
         cursor: pointer;
       }
   }
+
 
 
 }

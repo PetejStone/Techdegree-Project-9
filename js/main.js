@@ -1,7 +1,9 @@
-//variables for alert box
+//variables for alert boxes and notifications
 const alertClose = document.querySelector(".alert__close");
 const alertBox = document.querySelector(".alert");
-
+const bell = document.querySelector(".bell");
+const notification = document.querySelector('.notification');
+const notificationBox = document.querySelector(".alert--notification");
 //variables for nav charts
 const hourly = document.querySelector(".hourly");
 const daily = document.querySelector(".daily");
@@ -127,6 +129,11 @@ for (let i=0; i < nameArray.length; i+=1){
 //Closes alert box when X is clicked
 alertClose.addEventListener('click', () => {
   alertBox.style.display = 'none';
+})
+
+bell.addEventListener('click', ()=> {
+  notificationBox.style.display = 'inherit';
+  notification.style.display = 'none'
 })
 
 //------------------------------------------------------------------------
