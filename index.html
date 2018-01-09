@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/chart.js"></script>
+
   </head>
   <body>
     <header>
@@ -261,12 +262,20 @@
          <div class="user">
            <h3 class="heading">MESSAGE USER</h3>
            <form class="search-user" action="index.html" method="post">
-             <input type="search" id="search-user" name="user_search" placeholder="Search for User">
+             <input class="ui-widget" type="search" id="search-user" name="user_search" placeholder="Search for User">
            </form>
+
+
+                       <style>
+                          * html .ui-autocomplete {
+                          height: 100px;
+                          }
+                        </style>
 
            <form class="message-user" action="index.html" method="post">
              <textarea type="text" id="message-user" name="user_search" placeholder="Message for User"></textarea>
            </form>
+
 
            <button class="send" type="submit" name="button">SEND</button>
 
@@ -278,6 +287,11 @@
            <div class="alert alert--invalid" style="display:none;">
               <span class="alert__close" onclick="this.parentElement.style.display='none';">&times;</span>
               <p>Sorry, the user does not exist!</p>
+           </div>
+
+           <div class="alert alert--empty" style="display:none;">
+              <span class="alert__close" onclick="this.parentElement.style.display='none';">&times;</span>
+              <p>Message input field is empty!</p>
            </div>
 
          </div>
@@ -401,5 +415,6 @@
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
   <script src="js/main.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   </body>
 </html>

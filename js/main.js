@@ -6,6 +6,7 @@ const notification = document.querySelector('.notification');
 const notificationBox = document.querySelector(".alert--bell");
 const alertText = document.querySelector('.alert--text');
 const alertNotification = document.querySelector('.alert--notification');
+
 //variables for nav charts
 const hourly = document.querySelector(".hourly");
 const daily = document.querySelector(".daily");
@@ -15,7 +16,7 @@ const hourlyChartToggle = document.querySelector(".hourly-chart");
 const weeklyChartToggle = document.querySelector(".weekly-chart");
 const monthlyChartToggle = document.querySelector(".monthly-chart");
 const dailyChartToggle = document.querySelector(".daily-chart");
-
+const alertEmpty = document.querySelector('.alert--empty');
 //variables for random user generator
 // let members = [];
 let allMembers = [];
@@ -99,28 +100,52 @@ const nameArray = [
   members[3].name.last.toUpperCase(),
 ];
 
-//variables for search user
+//----------------------------------------
+//variables for search user and message user
+//----------------------------------------
 const searchBar = document.querySelector('#search-user');
 const send = document.querySelector('.send');
 const alertSuccess = document.querySelector('.alert--success');
 const alertInvalid = document.querySelector('.alert--invalid');
+const messageUser = document.querySelector('#message-user');
+const alertEmpty = document.querySelector('.alert--empty');
+
 
 //Search user function
 for (let i=0; i < nameArray.length; i+=1){
   send.addEventListener('click',()=> {
-    if (nameArray.indexOf(searchBar.value.toUpperCase()) > -1) {
+    if (nameArray.indexOf(searchBar.value.toUpperCase()) > -1 && messageUser.value !=="") {
       alertSuccess.style.display = 'block';
-    } else {
+    } else if (nameArray.indexOf(searchBar.value.toUpperCase()) > -1 && messageUser.value ===""){
+      alertEmpty.style.display = 'block';
+    } else if (nameArray.indexOf(searchBar.value.toUpperCase()) <= -1 && messageUser.value !=="") {
       alertInvalid.style.display = 'block';
     }
+    else {
+        alertEmpty.style.display = 'block';
+        alertInvalid.style.display = 'block';
+    }
+
   })
 }
+
+// send.addEventListener('click', ()=> {
+//   if (messageUser.value === "" ) {
+//     alertEmpty.style.display = 'block';
+//   }
+// })
 //--------------------------
 //end of search user function
 //---------------------------
 
 
 } //End of function(data)
+
+
+
+
+
+
 
 }); //End of Ajax
 //--------------------------
@@ -252,26 +277,30 @@ monthly.addEventListener('click', ()=> {
   daily.style.color = "initial";
 })
 //--------------------------------
-//End
+//End of chart display
 //--------------------------------
 
 
-//----------------
-//Search User function
-//----------------
-
-const searchbar = document.querySelector("#search-user");
-function searchUser() {
-  if (searchbar.input.value === members[0].name.first + members[0].name.last) {
-    console.log('woo');
-  }
-}
 
 
-
-
-
-// const sendButton = document.querySelector('.send');
-// const searchbar = document.querySelector("#search-user");
-// const alertSuccess = document.querySelector(".alert--success");
-// const alertInvalid = document.querySelector(".alert--invalid");
+//------------------------------
+//Autocomplete function
+//------------------------------
+$( function() {
+    var availableTags = [
+      members[0].name.first.toUpperCase() +' '+
+      members[0].name.last.toUpperCase(),
+      members[1].name.first.toUpperCase() +' '+
+      members[1].name.last.toUpperCase(),
+      members[2].name.first.toUpperCase() +' '+
+      members[2].name.last.toUpperCase(),
+      members[3].name.first.toUpperCase() +' '+
+      members[3].name.last.toUpperCase(),
+    ];
+    $( "#search-user" ).autocomplete({
+      source: availableTags
+    });
+  } );
+  //------------------------------
+  //End of Autocomplete function
+  //------------------------------

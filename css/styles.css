@@ -1,6 +1,6 @@
 .dashboard, input[placeholder], .alert, .heading, .chart-nav, .chartjsLegend li, .social, .stats, .new-members,
 .user, .recent-activity, #message-user, .send, .search-user > input,
-textarea, .settings, .settings-switch > p, .save, .cancel {
+textarea, .settings, .settings-switch > p, .save, .cancel, .ui-autocomplete {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 .alert, .line-chart, .chart-row, .bar-chart, .widgets, .member-row,
@@ -569,13 +569,13 @@ input[placeholder] {
     align-items: center; }
     .alert--notification > p {
       margin: 0; }
-  .alert--invalid, .alert--success {
+  .alert--invalid, .alert--success, .alert--empty {
     position: fixed;
     bottom: 50%;
     height: 10em;
     width: 75%;
     margin: 0 auto; }
-    .alert--invalid > p, .alert--success > p {
+    .alert--invalid > p, .alert--success > p, .alert--empty > p {
       font-size: 2em;
       text-align: center; }
   .alert__close {
@@ -903,5 +903,20 @@ input:checked + .slider:after {
 
 .error--box {
   height: 5em; }
+
+.ui-autocomplete {
+  max-height: 100px;
+  width: 5em;
+  overflow-y: auto;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  background-color: white;
+  text-align: left;
+  padding: 0;
+  font-weight: 400;
+  font-size: .85em;
+  /* prevent horizontal scrollbar */
+  overflow-x: hidden; }
 
 /*# sourceMappingURL=styles.css.map */
