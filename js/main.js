@@ -70,14 +70,15 @@ $.ajax({
 }
 
 const nameArray = [
-  members[0].name.first[0].toUpperCase() + members[0].name.first.substring(1) +' '+
-  members[0].name.last[0].toUpperCase() + members[0].name.last.substring(1),
-  members[1].name.first[0].toUpperCase() + members[1].name.first.substring(1) +' '+
-  members[1].name.last[0].toUpperCase() + members[1].name.last.substring(1),
-  members[2].name.first[0].toUpperCase() + members[2].name.first.substring(1) +' '+
-  members[2].name.last[0].toUpperCase() + members[2].name.last.substring(1),
-  members[3].name.first[0].toUpperCase() + members[3].name.first.substring(1) +' '+
-  members[3].name.last[0].toUpperCase() + members[3].name.last.substring(1),
+  members[0].name.first.toUpperCase() +' '+
+  members[0].name.last.toUpperCase(),
+  members[1].name.first.toUpperCase() +' '+
+  members[1].name.last.toUpperCase(),
+  members[2].name.first.toUpperCase() +' '+
+  members[2].name.last.toUpperCase(),
+  members[3].name.first.toUpperCase() +' '+
+  members[3].name.last.toUpperCase(),
+
 
 ];
 
@@ -89,7 +90,7 @@ const alertInvalid = document.querySelector('.alert--invalid');
 
 for (let i=0; i < nameArray.length; i+=1){
   send.addEventListener('click',()=> {
-    if (nameArray.indexOf(searchBar.value) > -1) {
+    if (nameArray.indexOf(searchBar.value.toUpperCase()) > -1) {
       alertSuccess.style.display = 'block';
     } else {
       alertInvalid.style.display = 'block';
