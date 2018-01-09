@@ -30,6 +30,11 @@ function randomTime() {
   randomNumber = Math.floor(Math.random() * 6 ) + 2;
   return randomNumber;
 }
+
+//----------------------------------------------------------
+// Random user generator function for random data
+//----------------------------------------------------------
+
 //Random User Generator
 $.ajax({
   url: 'https://randomuser.me/api/?results=4&inc=name,picture,email,registered',
@@ -37,10 +42,11 @@ $.ajax({
   success: function(data) {
     members = data.results;
 
+//------------------------
+//member data for widgets
+//------------------------
   for (let i = 0; i < members.length; i+=1) {
     //Random user generator variables
-
-
     let firstName = members[i].name.first[0].toUpperCase() + members[i].name.first.substring(1);
     let lastName = members[i].name.last[0].toUpperCase() + members[i].name.last.substring(1);
     let memberEmail = members[i].email;
@@ -68,7 +74,16 @@ $.ajax({
     // newMembers.children[i].children[1].children[1].style.color = '#65619E';
 
 }
+//-----------------------------------
+////---end of member data for widgets
+//-------------------------------------
 
+//------------------------------------
+//membder name data for search function
+//-------------------------------------
+
+
+//Name Array for search bar -- added 'toUpperCase' for non-case sensitive answers
 const nameArray = [
   members[0].name.first.toUpperCase() +' '+
   members[0].name.last.toUpperCase(),
@@ -78,16 +93,15 @@ const nameArray = [
   members[2].name.last.toUpperCase(),
   members[3].name.first.toUpperCase() +' '+
   members[3].name.last.toUpperCase(),
-
-
 ];
 
+//variables for search user
 const searchBar = document.querySelector('#search-user');
 const send = document.querySelector('.send');
 const alertSuccess = document.querySelector('.alert--success');
 const alertInvalid = document.querySelector('.alert--invalid');
 
-
+//Search user function
 for (let i=0; i < nameArray.length; i+=1){
   send.addEventListener('click',()=> {
     if (nameArray.indexOf(searchBar.value.toUpperCase()) > -1) {
@@ -97,18 +111,18 @@ for (let i=0; i < nameArray.length; i+=1){
     }
   })
 }
-
-
-
-
-
-
+//--------------------------
+//end of search user function
+//---------------------------
 
 
 } //End of function(data)
 
 }); //End of Ajax
+//--------------------------
 //End of Random User Generator
+//----------------------------
+
 
 //Closes alert box when X is clicked
 alertClose.addEventListener('click', () => {
