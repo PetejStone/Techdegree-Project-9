@@ -1,3 +1,4 @@
+
 //variables for alert boxes and notifications
 const alertClose = document.querySelector(".alert__close");
 const alertBox = document.querySelector(".alert");
@@ -304,3 +305,29 @@ $( function() {
   //------------------------------
   //End of Autocomplete function
   //------------------------------
+
+
+ //------------------------------
+  /// LOCAL STORAGE /////
+  //------------------------------
+  const saveButton = document.querySelector('.save');
+  const emailCheck = document.querySelector('.email-toggle');
+  const profileCheck = document.querySelector('.profile-toggle');
+  const timeZones = document.querySelector('.timezones');
+
+  saveButton.addEventListener('click', function () {
+      localStorage.selectedIndex = timeZones.selectedIndex;
+      localStorage.profileState = profileCheck.checked;
+      localStorage.emailState = emailCheck.checked;
+      localStorage.isSaved = true;
+  });
+
+  if (localStorage.isSaved) {
+      profileCheck.checked = JSON.parse(localStorage.profileState);
+      timeZones.selectedIndex = localStorage.selectedIndex;
+      emailCheck.checked = JSON.parse(localStorage.emailState);
+  }
+
+  //------------------------------
+   /// End of Loal Storage /////
+   //------------------------------
