@@ -409,25 +409,27 @@ template {
 .title-two {
   font-weight: 100; }
 
-.nav-container {
+.header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   background-color: #65619E;
   color: #fff;
-  height: 4em; }
+  height: 4em;
+  position: relative;
+  z-index: 50; }
 
-.nav__heading {
+.header__main {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 1em; }
 
-.nav__list {
+.header__list {
   padding-right: 1em;
   display: flex;
   flex-direction: row;
   align-items: center; }
-  .nav__list > li {
+  .header__list > li {
     font-size: 1em; }
 
 .nav__item {
@@ -478,16 +480,28 @@ template {
       flex-direction: column;
       justify-content: flex-start;
       width: 4em;
-      height: 100vw;
+      height: 100%;
       align-items: center;
-      position: absolute; }
-      .sidebar > :nth-child(1n) {
-        margin: 1em; }
+      position: fixed;
+      top: 0;
+      padding-top: 4em;
+      z-index: 0; }
       .sidebar--icon:hover {
         cursor: pointer;
         padding-left: 5px;
         border-left: 2px solid #2BE934;
-        transform: scale(1.5); } }
+        transform: scale(1.5); }
+      .sidebar > nav {
+        margin: 0;
+        height: 100vh;
+        align-items: center; }
+        .sidebar > nav > ul {
+          height: 35%;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start space-between;
+          align-items: center;
+          padding: 0; } }
 
 @media (min-width: 768px) {
   main {
