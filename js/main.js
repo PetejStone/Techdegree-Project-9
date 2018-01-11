@@ -37,20 +37,19 @@ function randomTime() {
   return randomNumber;
 }
 
-//----------------------------------------------------------
-// Random user generator function for random data
-//----------------------------------------------------------
 
-//Random User Generator
+
+//---------------------------------------------------------------------------
+//////////////////////////////Random User Generator//////////////////////////
+//-----------------------------------------------------------------------------
 $.ajax({
   url: 'https://randomuser.me/api/?results=4&inc=name,picture,email,registered',
   dataType: 'JSON',
   success: function(data) {
     members = data.results;
 
-//------------------------
+
 //member data for widgets
-//------------------------
   for (let i = 0; i < members.length; i+=1) {
     //Random user generator variables
     let firstName = members[i].name.first[0].toUpperCase() + members[i].name.first.substring(1);
@@ -68,7 +67,6 @@ $.ajax({
 // Random time stamp variable
     const time = '<p>'+ randomTime() + " hours ago" + '</p>';
 
-
 //Adds image to the new member widget and recent activity widget
     newMembers.children[i].children[0].innerHTML = image;
     recentActivity.children[i].children[0].innerHTML = image;
@@ -76,20 +74,17 @@ $.ajax({
     newMembers.children[i].children[1].innerHTML = "<p>"+name+"</p>" + email;
     recentActivity.children[i].children[1].children[0].insertAdjacentHTML('afterbegin', name);
     recentActivity.children[i].children[1].children[0].insertAdjacentHTML('afterend', time);
-// Target the email only from the new members widget and changes the color
-    // newMembers.children[i].children[1].children[1].style.color = '#65619E';
 
 }
 //-----------------------------------
-////---end of member data for widgets
+//end of member data for widgets
 //-------------------------------------
 
-//------------------------------------
-//membder name data for search function
-//-------------------------------------
+//----------------------------------------------
+//////////Member name data for search the function
+//---------------------------------------------
 
-
-//Name Array for search bar -- added 'toUpperCase' for non-case sensitive answers
+//Name Array for search function -- added 'toUpperCase' for non-case sensitive answers
 const nameArray = [
   members[0].name.first.toUpperCase() +' '+
   members[0].name.last.toUpperCase(),
@@ -101,9 +96,8 @@ const nameArray = [
   members[3].name.last.toUpperCase(),
 ];
 
-//----------------------------------------
-//variables for search user and message user
-//----------------------------------------
+
+//variables for search function and message user input
 const searchBar = document.querySelector('#search-user');
 const send = document.querySelector('.send');
 const alertSuccess = document.querySelector('.alert--success');
@@ -112,7 +106,7 @@ const messageUser = document.querySelector('#message-user');
 const alertEmpty = document.querySelector('.alert--empty');
 
 
-//Search user function
+//Member search function
 for (let i=0; i < nameArray.length; i+=1){
   send.addEventListener('click',()=> {
     if (nameArray.indexOf(searchBar.value.toUpperCase()) > -1 && messageUser.value !=="") {
@@ -130,28 +124,43 @@ for (let i=0; i < nameArray.length; i+=1){
   })
 }
 
-// send.addEventListener('click', ()=> {
-//   if (messageUser.value === "" ) {
-//     alertEmpty.style.display = 'block';
-//   }
-// })
 //--------------------------
 //end of search user function
 //---------------------------
 
 
+
+//------------------------------
+//Autocomplete function
+//------------------------------
+
+$( function() {
+    var availableTags = [
+      members[0].name.first[0].toUpperCase() + members[0].name.first.substring(1) +' '+
+      members[0].name.last[0].toUpperCase() + members[0].name.last.substring(1),
+      members[1].name.first[0].toUpperCase() + members[1].name.first.substring(1) +' '+
+      members[1].name.last[0].toUpperCase() + members[1].name.last.substring(1),
+      members[2].name.first[0].toUpperCase() + members[2].name.first.substring(1) +' '+
+      members[2].name.last[0].toUpperCase() + members[2].name.last.substring(1),
+      members[3].name.first[0].toUpperCase() + members[3].name.first.substring(1) +' '+
+      members[3].name.last[0].toUpperCase() + members[3].name.last.substring(1),
+    ];
+    $( "#search-user" ).autocomplete({
+      source: availableTags
+    });
+  } );
+
+  //------------------------------
+  //End of Autocomplete function
+  //------------------------------
+
+
 } //End of function(data)
 
-
-
-
-
-
-
 }); //End of Ajax
-//--------------------------
-//End of Random User Generator
-//----------------------------
+//--------------------------------------------------------------------------------------
+////////////////////////End of Random User Generator///////////////////////
+//----------------------------------------------------------------------------------------
 
 
 //Closes alert box when X is clicked
@@ -287,21 +296,21 @@ monthly.addEventListener('click', ()=> {
 //------------------------------
 //Autocomplete function
 //------------------------------
-$( function() {
-    var availableTags = [
-      members[0].name.first.toUpperCase() +' '+
-      members[0].name.last.toUpperCase(),
-      members[1].name.first.toUpperCase() +' '+
-      members[1].name.last.toUpperCase(),
-      members[2].name.first.toUpperCase() +' '+
-      members[2].name.last.toUpperCase(),
-      members[3].name.first.toUpperCase() +' '+
-      members[3].name.last.toUpperCase(),
-    ];
-    $( "#search-user" ).autocomplete({
-      source: availableTags
-    });
-  } );
+// $( function() {
+//     var availableTags = [
+//       members[0].name.first[0].toUpperCase() + members[0].name.first.substring(1) +' '+
+//       members[0].name.last[0].toUpperCase() + members[0].name.last.substring(1),
+//       members[1].name.first[0].toUpperCase() + members[1].name.first.substring(1) +' '+
+//       members[1].name.last[0].toUpperCase() + members[1].name.last.substring(1),
+//       members[2].name.first[0].toUpperCase() + members[2].name.first.substring(1) +' '+
+//       members[2].name.last[0].toUpperCase() + members[2].name.last.substring(1),
+//       members[3].name.first[0].toUpperCase() + members[3].name.first.substring(1) +' '+
+//       members[3].name.last[0].toUpperCase() + members[3].name.last.substring(1),
+//     ];
+//     $( "#search-user" ).autocomplete({
+//       source: availableTags
+//     });
+//   } );
   //------------------------------
   //End of Autocomplete function
   //------------------------------

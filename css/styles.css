@@ -493,7 +493,8 @@ template {
     flex-direction: row;
     width: 100%;
     justify-content: space-around;
-    align-items: center; }
+    align-items: center;
+    max-width: 500px; }
     @media (min-width: 768px) {
       .sidebar > nav {
         display: flex;

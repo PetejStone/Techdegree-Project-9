@@ -103,6 +103,7 @@
     width: 100%;
     justify-content: space-around;
     align-items: center;
+    max-width: 500px;
       @include mq(medium){
         @include flexy(flex,column);
         margin: 0;
