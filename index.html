@@ -21,8 +21,8 @@
                        <span class="alert__close" onclick="this.parentElement.style.display='none';">&times;</span>
               </div>
               <div class="alert alert--notification" style='display:none;'>
-                <span class="alert__close" onclick="this.parentElement.style.display='none';">&times;</span>
                 <p>You have a new message!</p><p>You have two new followers!</p>
+                <span class="alert__close" onclick="this.parentElement.style.display='none';">&times;</span>
               </div>
 
           <ul class="header__list">
@@ -162,51 +162,60 @@
 
       <!--End of Reusable Icons  -->
 
-      <div class="social">
-        <h3 class="heading heading--social">SOCIAL STATS</h3>
-        <div class="widgets">
+     <div class="social">
+       <h3 class="heading heading--social">SOCIAL STATS</h3>
+       <div class="widgets">
 
-          <div class="box">
-            <div class="icon">
-              <svg width="35" height="35">
-                <use xlink:href="#twitter" fill="white" />
-              </svg>
-            </div>
-            <div class="widget--content">
-              <h2 class="social">Twitter</h2>
-              <p class="stats">10,325</p>
-            </div>
-          </div>
+         <div class="box">
 
+           <div class="icon">
+             <svg width="35" height="35">
+               <use xlink:href="#twitter" fill="white" />
+             </svg>
+           </div>
 
-          <div class="box">
-            <div class="icon">
-              <svg width="35" height="35">
-                <use xlink:href="#facebook" fill="white" />
-              </svg>
-            </div>
-            <div class="widget--content">
-              <h2 class="social">Facebook</h2>
-              <p class="stats">10,325</p>
-            </div>
-          </div>
+           <div class="widget--content">
+             <h2 class="social">Twitter</h2>
+             <p class="stats">10,325</p>
+           </div>
+
+         </div>
 
 
+         <div class="box">
 
-          <div class="box">
-            <div class="icon">
-              <svg width="35" height="35">
-                <use xlink:href="#google" fill="white" />
-              </svg>
-            </div>
-            <div class="widget--content">
-              <h2 class="social">Google</h2>
-              <p class="stats">10,325</p>
-            </div>
-          </div>
+           <div class="icon">
+             <svg width="35" height="35">
+               <use xlink:href="#facebook" fill="white" />
+             </svg>
+           </div>
+
+           <div class="widget--content">
+             <h2 class="social">Facebook</h2>
+             <p class="stats">10,325</p>
+           </div>
+
+         </div>
+
+
+
+         <div class="box">
+           <div class="icon">
+             <svg width="35" height="35">
+               <use xlink:href="#google" fill="white" />
+             </svg>
+           </div>
+
+           <div class="widget--content">
+             <h2 class="social">Google</h2>
+             <p class="stats">10,325</p>
+           </div>
+           
+         </div>
 
        </div>
-    </div>
+
+     </div>
 
      <div class="member-row" id="members">
        <div class="members">
@@ -277,11 +286,11 @@
            </form>
 
 
-                       <style>
+                       <!-- /*<style>
                           * html .ui-autocomplete {
                           height: 100px;
                           }
-                        </style>
+                        </style>*/ -->
 
            <form class="message-user" action="index.html" method="post">
              <textarea type="text" id="message-user" name="user_search" placeholder="Message for User"></textarea>

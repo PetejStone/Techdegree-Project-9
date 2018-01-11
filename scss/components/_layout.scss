@@ -136,37 +136,58 @@ main {
  }
 }
 .dashboard {
-  max-width: 100%;
+  @include flexy(flex, column-reverse);
+  font-family: $helvetica-font-stack;
   font-weight: $font-weight--medium;
   background-color: $white;
-  @extend %main-font;
-  @include flexy(flex, row);
-  justify-content: space-between;
-  margin-bottom: 1em;
+  @include mq(medium){
+    max-width: 100%;
+    @include flexy(flex, row);
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
     &--tab {
-      color: $dashboard-font;
-      background-color: $white;
-      margin: .5em;
-      max-width: 5em;
-
+      display: none;
+      @include mq(medium){
+        margin: .5em;
+        max-width: 5em;
+        border-bottom: none;
+    }
+    & > p {
+      text-align: center;
+    }
     }
     &--search {
       width: 100%;
       background-color: $dash-background;
       border-left: 1px solid $border-color;
       border-bottom: 1px solid $border-color;
-
  }
 }
 
 #search {
   float: right;
-  margin-top: 1.5em;
-  margin-right: 1em;
-  height: 3em;
-  width: 30vw;
+  margin: 0 auto;
+  height: 4em;
+  width: 75%;
   border-radius: 5px;
   border: 1px solid $light-grey;
+  @include mq(medium){
+    float: right;
+    margin-top: 1.5em;
+    margin-right: 1em;
+    height: 3em;
+    width: 30vw;
+    border-radius: 5px;
+    border: 1px solid $light-grey;
+}}
+
+.search {
+  display: flex;
+  margin: .5em 0 .5em 0;
+  @include mq(medium){
+    margin: 0;
+  }
 }
 
 input[placeholder] {
@@ -175,17 +196,20 @@ input[placeholder] {
 }
 
 .spyglass {
-  position: absolute;
-  right: 1em;
-  top: 9em;
-    @include mq(medium){
+position: absolute;
+right: 100px;
+top: 9em;
+  @include mq(medium){
+    position: absolute;
+    right: 1em;
     right: 1.5em;
     top: 5.7em;
 }
 }
+
 .alert {
-  @extend %main-font;
-  @extend %center;
+  font-family: $helvetica-font-stack;
+  margin: 0 auto;
   @include flexy(flex, row);
   justify-content: space-between;
   color: $white;
@@ -194,35 +218,52 @@ input[placeholder] {
   border-radius: 5px;
   background-color: $main-color;
   padding: .5em;
+
   &--bell {
     background-color: #69D36E;
     width: 6em;
     height: 3em;
     position: absolute;
     right: 15em;
-      & > p {
-        background-color: inherit;
-        font-size: 12px;
-        margin: auto;
-        letter-spacing:.75px;
-        &:hover {
-          cursor: pointer;
+
+
+        & > p {
+          background-color: inherit;
+          font-size: 12px;
+          margin: auto;
+          letter-spacing:.75px;
+          @include mq(medium){
+            background-color: inherit;
+            font-size: 12px;
+            margin: auto;
+            letter-spacing:.75px;
+            }
+          &:hover {
+            cursor: pointer;
         }
-      }
-  }
+    }
+}
   &--notification {
+    position: fixed;
+    top: 4px;
+    right: 236px;
+    width: 9em;
     background-color: #69D36E;
-    display: flex;
-    flex-direction: row;
-    width: 19em;
-    height: 3em;
-    z-index: 100;
-    position: absolute;
-    top: 7px;
-    right: 15em;
-    align-items: center;
+    @include mq(medium){
+      display: flex;
+      flex-direction: row;
+      width: 19em;
+      height: 3em;
+      z-index: 100;
+      top: 7px;
+      right: 15em;
+      align-items: center;
+    }
       & > p {
         margin: 0;
+        width: inherit;
+        font-size: 12px;
+        padding-right: 3px;
       }
     }
   &--invalid,
@@ -250,36 +291,71 @@ input[placeholder] {
 }
 
 .chart-top {
-  @include flexy(flex, row);
+  @include flexy(flex, column);
+  @include mq(medium){
+    flex-direction: row;
+  }
 }
 
 .line-chart {
-  margin-top: 3em;
   @extend %center;
-  width: 90%;
+  width: 100%;
+  height: 100%;
   padding-bottom: 2em;
-}
+  border-bottom: 1px solid $light-grey;
+  @include mq(medium){
+    margin-top: 3em;
+    margin: 0 auto;
+    width: 90%;
+    padding-bottom: 2em;
+}}
 
 .heading {
-  @extend %main-font;
+  font-family: $helvetica-font-stack;
   font-weight: $font-weight--medium;
   color: $light-grey;
-  margin: 1em 0 0 0;
+  margin: 1em 0 .5em 0;
+  padding-bottom: 5px;
+  text-align:center;
+  @include mq(medium){
+    text-align: left;
+    margin: 1em 0 0 0;
+  }
+
   &--social{
     margin-left: 2em;
     margin-bottom: 5px;
   }
   &--members {
-    margin-left: 1em;
+    margin: 0 auto;
+    border-bottom: 1px solid $light-grey;
+    width: 11em;
+    padding: .5em;
+    @include mq(medium){
+      border-bottom: none;
+      margin-left: 1em;
+      padding: 0;
+
+    }
   }
 }
 
 .chart-nav {
-  width: 95%;
-  @extend %main-font;
+  @include flexy(flex,row);
+  justify-content: space-around;
+  width: 100%;
+  font-family: $helvetica-font-stack;
   font-weight: $font-weight--medium;
+  margin: 0 auto;
+  max-width: 500px;
   @include flexy(flex, row);
-  justify-content: flex-end;
+  padding: 1em 0 0 0;
+  @include mq(medium){
+    justify-content: flex-end;
+    max-width: 1400px;
+
+
+}
   & > :nth-child(3n){
     background-color: $nav-highlight;
     color: $white;
@@ -299,56 +375,84 @@ input[placeholder] {
 
 
 .chart-row {
-  @extend %center;
+  @include mq(medium){
+  margin: 0 auto;
   @include flexy(flex, row);
   border-top: 1px solid $light-grey;
   width: 90%;
   border-bottom: 1px solid $light-grey;
-
+}
 }
 
 .bar-chart {
-  width: 50%;
-  @extend %center;
-  border-right: 1px solid $light-grey;
+  border-bottom: 1px solid $light-grey;
+  padding-bottom: 1em;
+  @include mq(medium){
+    width: 50%;
+    margin: 0 auto;
+    border-bottom: none;
+    padding-bottom: 0;
+    border-right: 1px solid $light-grey;
+
 }
-
+}
 .doughnut-chart {
-  padding-left: 1em;
-  width: 50%;
-
+  border-bottom: 1px solid $light-grey;
+  @include mq(medium){
+    padding-left: 1em;
+    width: 50%;
+    border-bottom: none;
+}
 }
 
 .chartjsLegend li span {
+  right: 3em;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  border-radius: 5px;
+  @include mq(medium){
     right: 3em;
     display: inline-block;
     width: 30px;
     height: 30px;
     margin-right: 5px;
     border-radius: 5px;
-}
+}}
 
 .chartjsLegend li {
-  @include flexy(flex, row);
-  @extend %main-font;
+  @include flexy(flex, column);
+  align-items: center;
+  font-family: $helvetica-font-stack;
   font-weight: $font-weight--medium;
-}
+  @include mq(medium){
+    @include flexy(flex, row);
+    font-family: $helvetica-font-stack;
+    font-weight: $font-weight--medium;
+}}
 .chartjsLegend > ul {
   @include flexy(flex, row);
   justify-content: space-between;
-}
+  padding: 0;
+  justify-content: space-around;
+  @include mq(medium){
+    @include flexy(flex, row);
+    justify-content: space-between;
+}}
 
 .widgets {
+  @include mq(medium){
   @include flexy(flex, row);
   justify-content: space-around;
   width: 90%;
-  @extend %center;
+  margin: 0 auto;
   padding-bottom: 2em;
   border-bottom: 1px solid $light-grey;
 }
+}
 
 .icon {
-
   background-color: $header-color;
   padding: 1em;
   margin: 1em;
@@ -359,32 +463,62 @@ input[placeholder] {
 .box {
   border: 1px solid $light-grey;
   padding: 2em;
-  width: 30%;
+  width: 75%;
+  max-width: 500px;
   background-color: #f9f9f9;
+  margin: 0 auto;
+  margin-bottom: 1em;
   @include flexy(flex, row);
   justify-content: space-around;
-
+  @include mq(medium){
+    border: 1px solid $light-grey;
+    padding: 2em;
+    width: 30%;
+    min-width: 228px;
+    margin-right: 5px;
+    background-color: #f9f9f9;
+    @include flexy(flex, row);
+    justify-content: space-around;
+    margin-bottom: 0;
+}
 }
 
 .social {
-  @extend %main-font;
+  font-family: $helvetica-font-stack;
   font-weight: $font-weight--medium;
   color: $header-color;
   margin: 0;
+  border-bottom: 1px solid $light-grey;
+  @include mq(medium) {
+    font-family: $helvetica-font-stack;
+    font-weight: $font-weight--medium;
+    color: $header-color;
+    margin: 0;
+    border-bottom: none;
 }
-
+}
 .widget--content {
   @include flexy(flex, column);
   align-self: center;
+  @include mq(medium){
+  @include flexy(flex, column);
+  align-self: center;
+}
 }
 
 .stats {
-  @extend %main-font;
+  font-family: $helvetica-font-stack;
   font-weight: $font-weight--thin;
   color: $light-grey;
   font-size: 2em;
   margin: 0;
-
+  @include mq(medium){
+  font-family: $helvetica-font-stack;
+  font-weight: $font-weight--thin;
+  color: $light-grey;
+  font-size: 2em;
+  margin: 0;
+}
 }
 
 // #doughnutChart {
@@ -393,15 +527,21 @@ input[placeholder] {
 
 .members,
 .widget {
-  // @include flexy(flex, row);
-  width: 50%;
-}
+  width: 100%;
+  @include mq(medium){
+    width: 50%;
+}}
+
 .new-members,
 .user {
   width: 100%;
-  @extend %main-font;
+  font-family: $helvetica-font-stack;
   @include flexy(flex, column);
-
+  @include mq(medium){
+    width: 100%;
+    font-family: $helvetica-font-stack;
+    @include flexy(flex, column);
+}
 }
 
 .user {
@@ -411,32 +551,53 @@ input[placeholder] {
 .recent-activity {
   height: 20em;
   width: 100%;
-  @extend %main-font;
-
+  font-family: $helvetica-font-stack;
+  @include mq(medium){
+    height: 20em;
+    width: 100%;
+    font-family: $helvetica-font-stack;
+}
 }
 
 .member-row,
 .widget-row {
-  @include flexy(flex, row);
+  @include flexy(flex, column);
   width: 90%;
-  @extend %center;
+  margin: 0 auto;
+  @include mq(medium){
+    @include flexy(flex,row);
+  }
   & > :first-child {
+    @include mq(medium){
     border-right: 1px solid $light-grey;
   }
 }
 
+}
+
+
+
+
 .member {
-  @include flexy(flex, row);
+  @include flexy(flex, column);
   align-items: center;
-  padding: 1em;
+  padding: .75em;
   border-bottom: 1px solid $light-grey;
+  @include mq(medium){
+    @include flexy(flex, row);
+
+}
   &--info {
     @include flexy(flex, column);
-    align-items: left;
     border-bottom: none;
     padding: 0;
-    margin-right: auto;
-  }
+    margin-right: 0;
+    @include mq(medium){
+      @include flexy(flex, column);
+      align-items: left;
+      margin-right: auto;
+
+  }}
   &--img {
     border-bottom: none;
   }
@@ -456,58 +617,66 @@ input[placeholder] {
       margin-left:auto
     }
 
-  }
-}
 
+}
+}
 .search-user {
+  @include mq(medium){
   padding: 1em;
   width: 80%;
-  @extend %center;
+  margin: 0 auto;
+}
 }
 
 #search-user {
+  @include mq(medium){
   width: 100%;
   border-radius: 5px;
   border: 1px solid $light-grey;
   background-color: #f9f9f9;
   font-size: 1.2em;
 }
-
+}
 .message-user {
+  @include mq(medium){
   padding: 0 1em 1em 1em;
   width: 80%;
-  @extend %center;
+  margin: 0 auto;
+}
 }
 
 #message-user {
+  @include mq(medium){
   width: 100%;
   height: 6em;
   border-radius: 5px;
   border: 1px solid $light-grey;
   background-color: #f9f9f9;
-  @extend %main-font;
-
+  font-family: $helvetica-font-stack;
+}
 }
 
 .send {
+  @include mq(medium){
   width:75%;
-  @extend %center;
+  margin: 0 auto;
   height: 4em;
   border-radius: 5px;
   background-color: $header-color;
   color: $white;
-  @extend %main-font;
+  font-family: $helvetica-font-stack;
   font-weight: $font-weight--bold;
   letter-spacing: 1px;
-
+}
 }
 
 .search-user > input,
 textarea {
+  @include mq(medium){
   font-size: 1.2em;
   padding: 1em;
-  @extend %main-font;
-}
+  font-family: $helvetica-font-stack;
+}}
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
@@ -521,25 +690,28 @@ button:hover {
 }
 
 .settings {
+  @include mq(medium){
   padding: 1em;
-  @extend %center;
+  margin: 0 auto;
   width: 90%;
-  @extend %main-font;
-}
+  font-family: $helvetica-font-stack;
+}}
 .settings-switch {
+  @include mq(medium){
   @include flexy(flex, row);
   justify-content: space-between;
   margin-bottom: 2em;
   margin-top: 2em;
   & > p {
     margin: 0;
-    @extend %main-font;
+    font-family: $helvetica-font-stack;
   }
 }
-
+}
 
 /* The switch - the box around the slider */
 .switch {
+
   position: relative;
   display: inline-block;
   width: 60px;
@@ -626,38 +798,41 @@ input:checked + .slider:after {
 }
 
 .timezones {
+  @include mq(medium){
   height: 4em;
   width: 100%;
   margin-bottom: 1.5em;
-
+}
 }
 
 .save {
+  @include mq(medium){
   width:48%;
-  @extend %center;
+  margin: 0 auto;
   height: 4em;
   border-radius: 5px;
   background-color: $header-color;
   color: $white;
-  @extend %main-font;
+  font-family: $helvetica-font-stack;
   font-weight: $font-weight--bold;
   letter-spacing: 1px;
   float: left;
-
+}
 }
 
 .cancel {
+  @include mq(medium){
   width:48%;
-  @extend %center;
+  margin: 0 auto;
   height: 4em;
   border-radius: 5px;
   background-color: $light-grey;
   color: $white;
-  @extend %main-font;
+  font-family: $helvetica-font-stack;
   font-weight: $font-weight--bold;
   letter-spacing: 1px;
   float: right;
-}
+}}
 
 .error--box {
   height: 5em;
@@ -680,4 +855,9 @@ font-weight: $font-weight--medium;
 font-size: .85em;
 /* prevent horizontal scrollbar */
 overflow-x: hidden;
+}
+
+//Hides appended DIV that appears at bottom of page when a user searches for a member
+.ui-helper-hidden-accessible {
+  display: none;
 }

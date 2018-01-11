@@ -147,6 +147,7 @@ $( function() {
     ];
     $( "#search-user" ).autocomplete({
       source: availableTags
+      
     });
   } );
 
@@ -293,27 +294,7 @@ monthly.addEventListener('click', ()=> {
 
 
 
-//------------------------------
-//Autocomplete function
-//------------------------------
-// $( function() {
-//     var availableTags = [
-//       members[0].name.first[0].toUpperCase() + members[0].name.first.substring(1) +' '+
-//       members[0].name.last[0].toUpperCase() + members[0].name.last.substring(1),
-//       members[1].name.first[0].toUpperCase() + members[1].name.first.substring(1) +' '+
-//       members[1].name.last[0].toUpperCase() + members[1].name.last.substring(1),
-//       members[2].name.first[0].toUpperCase() + members[2].name.first.substring(1) +' '+
-//       members[2].name.last[0].toUpperCase() + members[2].name.last.substring(1),
-//       members[3].name.first[0].toUpperCase() + members[3].name.first.substring(1) +' '+
-//       members[3].name.last[0].toUpperCase() + members[3].name.last.substring(1),
-//     ];
-//     $( "#search-user" ).autocomplete({
-//       source: availableTags
-//     });
-//   } );
-  //------------------------------
-  //End of Autocomplete function
-  //------------------------------
+
 
 
  //------------------------------
