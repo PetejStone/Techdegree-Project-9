@@ -218,6 +218,7 @@ top: 9em;
   border-radius: 5px;
   background-color: $main-color;
   padding: .5em;
+  z-index: 500;
 
   &--bell {
     background-color: #69D36E;
@@ -314,17 +315,24 @@ top: 9em;
   font-family: $helvetica-font-stack;
   font-weight: $font-weight--medium;
   color: $light-grey;
-  margin: 1em 0 .5em 0;
+  margin: 0 auto;
   padding-bottom: 5px;
+  padding-top: 5px;
   text-align:center;
+  border-bottom: 1px solid $light-grey;
+  width: fit-content;
   @include mq(medium){
     text-align: left;
     margin: 1em 0 0 0;
+    border-bottom: none;
   }
 
   &--social{
-    margin-left: 2em;
-    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    @include mq(medium){
+      margin-left: 3em;
+    }
   }
   &--members {
     margin: 0 auto;
@@ -334,6 +342,7 @@ top: 9em;
     @include mq(medium){
       border-bottom: none;
       margin-left: 1em;
+      margin-top: 5px;
       padding: 0;
 
     }
@@ -562,19 +571,27 @@ top: 9em;
 .member-row,
 .widget-row {
   @include flexy(flex, column);
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
+  overflow: auto;
   @include mq(medium){
     @include flexy(flex,row);
+    margin: 0 auto;
+    width: 90%;
   }
   & > :first-child {
     @include mq(medium){
     border-right: 1px solid $light-grey;
   }
 }
-
 }
 
+.widget-row {
+  border-top: 1px solid $light-grey;
+  @include mq(medium){
+    border-top: none;
+  }
+}
 
 
 
@@ -596,13 +613,24 @@ top: 9em;
       @include flexy(flex, column);
       align-items: left;
       margin-right: auto;
+  }
 
-  }}
+}
   &--img {
     border-bottom: none;
   }
   &--email{
     color: $main-color;
+  }
+  &--arrow {
+    transform: rotate(90deg);
+    margin-top:5px;
+    @include mq(medium){
+      transform: rotate(0deg);
+      margin-top: 0;
+      margin-left: auto;
+
+    }
   }
   & > img {
     border-radius: 50%;
@@ -621,43 +649,59 @@ top: 9em;
 }
 }
 .search-user {
-  @include mq(medium){
   padding: 1em;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
+  @include mq(medium){
+    padding: 1em;
+    width: 80%;
+    margin: 0 auto;
 }
 }
 
 #search-user {
-  @include mq(medium){
   width: 100%;
   border-radius: 5px;
   border: 1px solid $light-grey;
   background-color: #f9f9f9;
   font-size: 1.2em;
+  @include mq(medium){
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid $light-grey;
+    background-color: #f9f9f9;
+    font-size: 1.2em;
 }
 }
 .message-user {
-  @include mq(medium){
   padding: 0 1em 1em 1em;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
+  @include mq(medium){
+    padding: 0 1em 1em 1em;
+    width: 80%;
+    margin: 0 auto;
 }
 }
 
 #message-user {
-  @include mq(medium){
   width: 100%;
   height: 6em;
   border-radius: 5px;
   border: 1px solid $light-grey;
   background-color: #f9f9f9;
   font-family: $helvetica-font-stack;
+  @include mq(medium){
+    width: 100%;
+    height: 6em;
+    border-radius: 5px;
+    border: 1px solid $light-grey;
+    background-color: #f9f9f9;
+    font-family: $helvetica-font-stack;
 }
 }
 
 .send {
-  @include mq(medium){
   width:75%;
   margin: 0 auto;
   height: 4em;
@@ -667,11 +711,25 @@ top: 9em;
   font-family: $helvetica-font-stack;
   font-weight: $font-weight--bold;
   letter-spacing: 1px;
+  @include mq(medium){
+    width:75%;
+    margin: 0 auto;
+    height: 4em;
+    border-radius: 5px;
+    background-color: $header-color;
+    color: $white;
+    font-family: $helvetica-font-stack;
+    font-weight: $font-weight--bold;
+    letter-spacing: 1px;
 }
 }
 
 .search-user > input,
 textarea {
+  resize: none;
+  font-size: 1.2em;
+  padding: 1em;
+  font-family: $helvetica-font-stack;
   @include mq(medium){
   font-size: 1.2em;
   padding: 1em;
@@ -697,17 +755,23 @@ button:hover {
   font-family: $helvetica-font-stack;
 }}
 .settings-switch {
-  @include mq(medium){
   @include flexy(flex, row);
   justify-content: space-between;
-  margin-bottom: 2em;
+  margin: 0 auto;
+  margin-bottom: 1em;
   margin-top: 2em;
+  width: 75%;
   & > p {
     margin: 0;
     font-family: $helvetica-font-stack;
   }
-}
-}
+  @include mq(medium){
+    @include flexy(flex, row);
+    justify-content: space-between;
+    width: 100%;
+
+   }
+  }
 
 /* The switch - the box around the slider */
 .switch {
@@ -798,31 +862,23 @@ input:checked + .slider:after {
 }
 
 .timezones {
-  @include mq(medium){
   height: 4em;
-  width: 100%;
+  width: 78%;
+  margin-left: 7em;
   margin-bottom: 1.5em;
-}
-}
-
-.save {
   @include mq(medium){
-  width:48%;
-  margin: 0 auto;
-  height: 4em;
-  border-radius: 5px;
-  background-color: $header-color;
-  color: $white;
-  font-family: $helvetica-font-stack;
-  font-weight: $font-weight--bold;
-  letter-spacing: 1px;
-  float: left;
+    height: 4em;
+    width: 100%;
+    margin-bottom: 1.5em;
+    margin-left: 0;
 }
 }
 
+
+
+.save,
 .cancel {
-  @include mq(medium){
-  width:48%;
+  width:35%;
   margin: 0 auto;
   height: 4em;
   border-radius: 5px;
@@ -831,8 +887,30 @@ input:checked + .slider:after {
   font-family: $helvetica-font-stack;
   font-weight: $font-weight--bold;
   letter-spacing: 1px;
+  @include mq(medium){
+    width:48%;
+
+}
+}
+
+.save {
+  background-color: $header-color;
+  float: left;
+  margin-left: 7em;
+  display: inline-block;
+  @include mq(medium){
+    margin-left: 0;
+  }
+}
+
+.cancel {
   float: right;
-}}
+  margin-right: 7em;
+  display: inline-block;
+  @include mq(medium){
+    margin-right: 0;
+  }
+}
 
 .error--box {
   height: 5em;

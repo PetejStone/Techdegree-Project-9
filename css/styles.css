@@ -597,7 +597,8 @@ input[placeholder] {
   width: 90%;
   border-radius: 5px;
   background-color: #7F54B0;
-  padding: .5em; }
+  padding: .5em;
+  z-index: 500; }
   .alert--bell {
     background-color: #69D36E;
     width: 6em;
@@ -675,16 +676,23 @@ input[placeholder] {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
   color: #d1d1d1;
-  margin: 1em 0 .5em 0;
+  margin: 0 auto;
   padding-bottom: 5px;
-  text-align: center; }
+  padding-top: 5px;
+  text-align: center;
+  border-bottom: 1px solid #d1d1d1;
+  width: fit-content; }
   @media (min-width: 768px) {
     .heading {
       text-align: left;
-      margin: 1em 0 0 0; } }
+      margin: 1em 0 0 0;
+      border-bottom: none; } }
   .heading--social {
-    margin-left: 2em;
-    margin-bottom: 5px; }
+    margin-top: 10px;
+    margin-bottom: 10px; }
+    @media (min-width: 768px) {
+      .heading--social {
+        margin-left: 3em; } }
   .heading--members {
     margin: 0 auto;
     border-bottom: 1px solid #d1d1d1;
@@ -694,6 +702,7 @@ input[placeholder] {
       .heading--members {
         border-bottom: none;
         margin-left: 1em;
+        margin-top: 5px;
         padding: 0; } }
 
 .chart-nav {
@@ -912,17 +921,26 @@ input[placeholder] {
 .widget-row {
   display: flex;
   flex-direction: column;
-  width: 90%;
-  margin: 0 auto; }
+  width: 100%;
+  margin: 0 auto;
+  overflow: auto; }
   @media (min-width: 768px) {
     .member-row,
     .widget-row {
       display: flex;
-      flex-direction: row; } }
+      flex-direction: row;
+      margin: 0 auto;
+      width: 90%; } }
   @media (min-width: 768px) {
     .member-row > :first-child,
     .widget-row > :first-child {
       border-right: 1px solid #d1d1d1; } }
+
+.widget-row {
+  border-top: 1px solid #d1d1d1; }
+  @media (min-width: 768px) {
+    .widget-row {
+      border-top: none; } }
 
 .member {
   display: flex;
@@ -950,6 +968,14 @@ input[placeholder] {
     border-bottom: none; }
   .member--email {
     color: #7F54B0; }
+  .member--arrow {
+    transform: rotate(90deg);
+    margin-top: 5px; }
+    @media (min-width: 768px) {
+      .member--arrow {
+        transform: rotate(0deg);
+        margin-top: 0;
+        margin-left: auto; } }
   .member > img {
     border-radius: 50%; }
   .member > p {
@@ -958,53 +984,90 @@ input[placeholder] {
     .member > p.date {
       margin-left: auto; }
 
-@media (min-width: 768px) {
-  .search-user {
-    padding: 1em;
-    width: 80%;
-    margin: 0 auto; } }
+.search-user {
+  padding: 1em;
+  width: 100%;
+  margin: 0 auto; }
+  @media (min-width: 768px) {
+    .search-user {
+      padding: 1em;
+      width: 80%;
+      margin: 0 auto; } }
 
-@media (min-width: 768px) {
-  #search-user {
-    width: 100%;
-    border-radius: 5px;
-    border: 1px solid #d1d1d1;
-    background-color: #f9f9f9;
-    font-size: 1.2em; } }
+#search-user {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #d1d1d1;
+  background-color: #f9f9f9;
+  font-size: 1.2em; }
+  @media (min-width: 768px) {
+    #search-user {
+      width: 100%;
+      border-radius: 5px;
+      border: 1px solid #d1d1d1;
+      background-color: #f9f9f9;
+      font-size: 1.2em; } }
 
-@media (min-width: 768px) {
-  .message-user {
-    padding: 0 1em 1em 1em;
-    width: 80%;
-    margin: 0 auto; } }
+.message-user {
+  padding: 0 1em 1em 1em;
+  width: 100%;
+  margin: 0 auto; }
+  @media (min-width: 768px) {
+    .message-user {
+      padding: 0 1em 1em 1em;
+      width: 80%;
+      margin: 0 auto; } }
 
-@media (min-width: 768px) {
-  #message-user {
-    width: 100%;
-    height: 6em;
-    border-radius: 5px;
-    border: 1px solid #d1d1d1;
-    background-color: #f9f9f9;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; } }
+#message-user {
+  width: 100%;
+  height: 6em;
+  border-radius: 5px;
+  border: 1px solid #d1d1d1;
+  background-color: #f9f9f9;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  @media (min-width: 768px) {
+    #message-user {
+      width: 100%;
+      height: 6em;
+      border-radius: 5px;
+      border: 1px solid #d1d1d1;
+      background-color: #f9f9f9;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; } }
 
-@media (min-width: 768px) {
-  .send {
-    width: 75%;
-    margin: 0 auto;
-    height: 4em;
-    border-radius: 5px;
-    background-color: #65619E;
-    color: #fff;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 700;
-    letter-spacing: 1px; } }
+.send {
+  width: 75%;
+  margin: 0 auto;
+  height: 4em;
+  border-radius: 5px;
+  background-color: #65619E;
+  color: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px; }
+  @media (min-width: 768px) {
+    .send {
+      width: 75%;
+      margin: 0 auto;
+      height: 4em;
+      border-radius: 5px;
+      background-color: #65619E;
+      color: #fff;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      letter-spacing: 1px; } }
 
-@media (min-width: 768px) {
-  .search-user > input,
-  textarea {
-    font-size: 1.2em;
-    padding: 1em;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; } }
+.search-user > input,
+textarea {
+  resize: none;
+  font-size: 1.2em;
+  padding: 1em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  @media (min-width: 768px) {
+    .search-user > input,
+    textarea {
+      font-size: 1.2em;
+      padding: 1em;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; } }
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
@@ -1020,16 +1083,23 @@ button:hover {
     width: 90%;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; } }
 
-@media (min-width: 768px) {
-  .settings-switch {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 2em;
-    margin-top: 2em; }
-    .settings-switch > p {
-      margin: 0;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; } }
+.settings-switch {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-bottom: 1em;
+  margin-top: 2em;
+  width: 75%; }
+  .settings-switch > p {
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  @media (min-width: 768px) {
+    .settings-switch {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%; } }
 
 /* The switch - the box around the slider */
 .switch {
@@ -1106,37 +1176,50 @@ input:checked + .slider:after {
   left: 40%;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
-@media (min-width: 768px) {
-  .timezones {
-    height: 4em;
-    width: 100%;
-    margin-bottom: 1.5em; } }
+.timezones {
+  height: 4em;
+  width: 78%;
+  margin-left: 7em;
+  margin-bottom: 1.5em; }
+  @media (min-width: 768px) {
+    .timezones {
+      height: 4em;
+      width: 100%;
+      margin-bottom: 1.5em;
+      margin-left: 0; } }
 
-@media (min-width: 768px) {
-  .save {
-    width: 48%;
-    margin: 0 auto;
-    height: 4em;
-    border-radius: 5px;
-    background-color: #65619E;
-    color: #fff;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 700;
-    letter-spacing: 1px;
-    float: left; } }
+.save,
+.cancel {
+  width: 35%;
+  margin: 0 auto;
+  height: 4em;
+  border-radius: 5px;
+  background-color: #d1d1d1;
+  color: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px; }
+  @media (min-width: 768px) {
+    .save,
+    .cancel {
+      width: 48%; } }
 
-@media (min-width: 768px) {
-  .cancel {
-    width: 48%;
-    margin: 0 auto;
-    height: 4em;
-    border-radius: 5px;
-    background-color: #d1d1d1;
-    color: #fff;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 700;
-    letter-spacing: 1px;
-    float: right; } }
+.save {
+  background-color: #65619E;
+  float: left;
+  margin-left: 7em;
+  display: inline-block; }
+  @media (min-width: 768px) {
+    .save {
+      margin-left: 0; } }
+
+.cancel {
+  float: right;
+  margin-right: 7em;
+  display: inline-block; }
+  @media (min-width: 768px) {
+    .cancel {
+      margin-right: 0; } }
 
 .error--box {
   height: 5em; }
