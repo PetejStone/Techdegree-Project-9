@@ -147,7 +147,7 @@ $( function() {
     ];
     $( "#search-user" ).autocomplete({
       source: availableTags
-      
+
     });
   } );
 
@@ -301,6 +301,7 @@ monthly.addEventListener('click', ()=> {
   /// LOCAL STORAGE /////
   //------------------------------
   const saveButton = document.querySelector('.save');
+  const cancelButton = document.querySelector('.cancel');
   const emailCheck = document.querySelector('.email-toggle');
   const profileCheck = document.querySelector('.profile-toggle');
   const timeZones = document.querySelector('.timezones');
@@ -316,8 +317,31 @@ monthly.addEventListener('click', ()=> {
       profileCheck.checked = JSON.parse(localStorage.profileState);
       timeZones.selectedIndex = localStorage.selectedIndex;
       emailCheck.checked = JSON.parse(localStorage.emailState);
-  }
+  };
 
   //------------------------------
    /// End of Loal Storage /////
    //------------------------------
+
+
+ //------------------------------
+  ///Local Storage Cancel /////
+  //----------------------------
+
+   cancelButton.addEventListener('click', function () {
+     timeZones.selectedIndex = timeZones[0];
+     localStorage.selectedIndex = timeZones[0];
+     localStorage.profileState = profileCheck.checked = false;
+     localStorage.emailState = emailCheck.checked = false;
+     localStorage.isSaved = false;
+ });
+
+   if (localStorage.isSaved = false) {
+       profileCheck.checked = false;
+       timeZones.selectedIndex = timeZones[0];
+       emailCheck.checked = false;
+       localStorage.isSaved = true;
+   }
+//------------------------------
+///End of Local Storage Cancel /////
+//----------------------------

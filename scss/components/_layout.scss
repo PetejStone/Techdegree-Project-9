@@ -152,6 +152,7 @@ main {
         margin: .5em;
         max-width: 5em;
         border-bottom: none;
+        display: inline;
     }
     & > p {
       text-align: center;
@@ -175,8 +176,8 @@ main {
   @include mq(medium){
     float: right;
     margin-top: 1.5em;
+    margin-bottom: 1.5em;
     margin-right: 1em;
-    height: 3em;
     width: 30vw;
     border-radius: 5px;
     border: 1px solid $light-grey;
@@ -316,6 +317,7 @@ top: 9em;
   font-weight: $font-weight--medium;
   color: $light-grey;
   margin: 0 auto;
+  margin-bottom: 10px;
   padding-bottom: 5px;
   padding-top: 5px;
   text-align:center;
@@ -586,6 +588,9 @@ top: 9em;
 }
 }
 
+.member-row {
+
+}
 .widget-row {
   border-top: 1px solid $light-grey;
   @include mq(medium){
@@ -863,14 +868,14 @@ input:checked + .slider:after {
 
 .timezones {
   height: 4em;
-  width: 78%;
-  margin-left: 7em;
-  margin-bottom: 1.5em;
+  width: 75%;
+  margin-bottom: 2.5em;
   @include mq(medium){
     height: 4em;
     width: 100%;
     margin-bottom: 1.5em;
     margin-left: 0;
+    margin-top: 1.3em;
 }
 }
 
@@ -878,37 +883,37 @@ input:checked + .slider:after {
 
 .save,
 .cancel {
-  width:35%;
+  width:75%;
   margin: 0 auto;
+  margin-bottom: .5em;
   height: 4em;
   border-radius: 5px;
+  display: block;
   background-color: $light-grey;
   color: $white;
   font-family: $helvetica-font-stack;
   font-weight: $font-weight--bold;
   letter-spacing: 1px;
+  border: none;
   @include mq(medium){
     width:48%;
+    margin-bottom: none;
 
 }
 }
 
 .save {
   background-color: $header-color;
-  float: left;
-  margin-left: 7em;
-  display: inline-block;
   @include mq(medium){
     margin-left: 0;
+    float: left;
   }
 }
 
 .cancel {
-  float: right;
-  margin-right: 7em;
-  display: inline-block;
   @include mq(medium){
     margin-right: 0;
+    float: right;
   }
 }
 
@@ -916,7 +921,11 @@ input:checked + .slider:after {
   height: 5em;
 }
 
-
+.select-list {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
 
 .ui-autocomplete {
 max-height: 100px;
