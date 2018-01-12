@@ -1,16 +1,9 @@
-.title-one {
-  font-weight: $font-weight--medium;
-}
-
-.title-two {
-  font-weight: $font-weight--thin;
-}
 
 .header {
   @include flexy(flex, row);
   justify-content: space-between;
   align-items: center;
-  background-color: $header-color;
+  background-color:  $main-color;
   color: $white;
   height: 4em;
   position: relative;
@@ -18,7 +11,6 @@
 }
 
 .header__main {
-  font-family: $helvetica-font-stack;
   margin: 1em;
 }
 
@@ -26,13 +18,6 @@
   padding-right: 1em;
   @include flexy(flex, row);
   align-items: center;
-  & > li {
-    font-size: 1em;
-  }
-}
-
-.nav__item {
-  font-weight: $font-weight--thin;
 }
 
 .bell {
@@ -66,68 +51,6 @@
   margin-right: .5em;
 }
 
-.name {
-  font-family: $helvetica-font-stack;
-  font-weight: $font-weight--thin;
-  letter-spacing: 1.2px;
-}
-
-.sidebar {
-  background-color: #5A4176;
-  padding: 1em;
-  height: 3.5em;
-  @include flexy(flex,row);
-  align-items: center;
-  width: 100%;
-  justify-content: space-around;
-    @include mq(medium){
-      background-color: $sidebar-color;
-      @include flexy(flex, column);
-      justify-content: flex-start;
-      width: 4em;
-      height: 100%;
-      align-items: center;
-      position: fixed;
-      top: 0;
-      padding-top: 4em;
-      z-index: 0;
-  }
-  &--icon:hover {
-    cursor: pointer;
-    padding-left: 5px;
-    border-left: 2px solid $notification-color;
-    transform: scale(1.5);
-    }
-  & > nav {
-    @include flexy(flex,row);
-    width: 100%;
-    justify-content: space-around;
-    align-items: center;
-    max-width: 500px;
-      @include mq(medium){
-        @include flexy(flex,column);
-        margin: 0;
-        height: 100vh;
-        align-items: center;
-        justify-content: flex-start;
-        }
-      & > ul {
-      @include flexy(flex,row);
-      width: 100%;
-      padding: 0;
-      justify-content: space-around;
-      align-items: center;
-        @include mq(medium){
-          height: 35%;
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start space-between;
-          align-items: center;
-          padding: 0;
-    }
-  }
- }
-}//end  of sidebar class
 
 
 main {
@@ -135,10 +58,9 @@ main {
     margin-left: 64px;
  }
 }
+
 .dashboard {
   @include flexy(flex, column-reverse);
-  font-family: $helvetica-font-stack;
-  font-weight: $font-weight--medium;
   background-color: $white;
   @include mq(medium){
     max-width: 100%;
@@ -154,169 +76,13 @@ main {
         border-bottom: none;
         display: inline;
     }
-    & > p {
-      text-align: center;
-    }
-    }
-    &--search {
-      width: 100%;
-      background-color: $dash-background;
-      border-left: 1px solid $border-color;
-      border-bottom: 1px solid $border-color;
- }
-}
-
-#search {
-  float: right;
-  margin: 0 auto;
-  height: 4em;
-  width: 75%;
-  border-radius: 5px;
-  border: 1px solid $light-grey;
-  @include mq(medium){
-    float: right;
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
-    margin-right: 1em;
-    width: 30vw;
-    border-radius: 5px;
-    border: 1px solid $light-grey;
-}}
-
-.search {
-  display: flex;
-  margin: .5em 0 .5em 0;
-  @include mq(medium){
-    margin: 0;
   }
 }
 
-input[placeholder] {
-  padding-left: 10px;
-  @extend %main-font;
-}
-
-.spyglass {
-position: absolute;
-right: 100px;
-top: 9em;
-  @include mq(medium){
-    position: absolute;
-    right: 1em;
-    right: 1.5em;
-    top: 5.7em;
-}
-}
-
-.alert {
-  font-family: $helvetica-font-stack;
-  margin: 0 auto;
-  @include flexy(flex, row);
-  justify-content: space-between;
-  color: $white;
-  font-weight: $font-weight--thin;
-  width: 90%;
-  border-radius: 5px;
-  background-color: $main-color;
-  padding: .5em;
-  z-index: 500;
-
-  &--bell {
-    background-color: #69D36E;
-    width: 6em;
-    height: 3em;
-    position: absolute;
-    right: 15em;
-
-
-        & > p {
-          background-color: inherit;
-          font-size: 12px;
-          margin: auto;
-          letter-spacing:.75px;
-          @include mq(medium){
-            background-color: inherit;
-            font-size: 12px;
-            margin: auto;
-            letter-spacing:.75px;
-            }
-          &:hover {
-            cursor: pointer;
-        }
-    }
-}
-  &--notification {
-    position: fixed;
-    top: 4px;
-    right: 236px;
-    width: 9em;
-    background-color: #69D36E;
-    @include mq(medium){
-      display: flex;
-      flex-direction: row;
-      width: 19em;
-      height: 3em;
-      z-index: 100;
-      top: 7px;
-      right: 15em;
-      align-items: center;
-    }
-      & > p {
-        margin: 0;
-        width: inherit;
-        font-size: 12px;
-        padding-right: 3px;
-      }
-    }
-  &--invalid,
-  &--success,
-  &--empty {
-    position: fixed;
-    bottom: 50%;
-    height: 10em;
-    width: 75%;
-    margin: 0 auto;
-    & > p {
-      font-size: 2em;
-      text-align: center;
-  }
-}
-    &__close {
-      padding: 5px;
-      &:hover {
-        cursor: pointer;
-      }
-  }
-
-
-
-}
-
-.chart-top {
-  @include flexy(flex, column);
-  @include mq(medium){
-    flex-direction: row;
-  }
-}
-
-.line-chart {
-  @extend %center;
-  width: 100%;
-  height: 100%;
-  padding-bottom: 2em;
-  border-bottom: 1px solid $light-grey;
-  @include mq(medium){
-    margin-top: 3em;
-    margin: 0 auto;
-    width: 90%;
-    padding-bottom: 2em;
-}}
 
 .heading {
-  font-family: $helvetica-font-stack;
-  font-weight: $font-weight--medium;
   color: $light-grey;
-  margin: 0 auto;
+  @extend %center;
   margin-bottom: 10px;
   padding-bottom: 5px;
   padding-top: 5px;
@@ -337,7 +103,7 @@ top: 9em;
     }
   }
   &--members {
-    margin: 0 auto;
+    @extend %center;
     border-bottom: 1px solid $light-grey;
     width: 11em;
     padding: .5em;
@@ -355,17 +121,14 @@ top: 9em;
   @include flexy(flex,row);
   justify-content: space-around;
   width: 100%;
-  font-family: $helvetica-font-stack;
-  font-weight: $font-weight--medium;
-  margin: 0 auto;
+  @extend %center;
   max-width: 500px;
   @include flexy(flex, row);
   padding: 1em 0 0 0;
   @include mq(medium){
     justify-content: flex-end;
     max-width: 1400px;
-
-
+    margin: auto;
 }
   & > :nth-child(3n){
     background-color: $nav-highlight;
@@ -384,87 +147,8 @@ top: 9em;
     }
 }
 
-
-.chart-row {
-  @include mq(medium){
-  margin: 0 auto;
-  @include flexy(flex, row);
-  border-top: 1px solid $light-grey;
-  width: 90%;
-  border-bottom: 1px solid $light-grey;
-}
-}
-
-.bar-chart {
-  border-bottom: 1px solid $light-grey;
-  padding-bottom: 1em;
-  @include mq(medium){
-    width: 50%;
-    margin: 0 auto;
-    border-bottom: none;
-    padding-bottom: 0;
-    border-right: 1px solid $light-grey;
-
-}
-}
-.doughnut-chart {
-  border-bottom: 1px solid $light-grey;
-  @include mq(medium){
-    padding-left: 1em;
-    width: 50%;
-    border-bottom: none;
-}
-}
-
-.chartjsLegend li span {
-  right: 3em;
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  margin-right: 5px;
-  border-radius: 5px;
-  @include mq(medium){
-    right: 3em;
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    margin-right: 5px;
-    border-radius: 5px;
-}}
-
-.chartjsLegend li {
-  @include flexy(flex, column);
-  align-items: center;
-  font-family: $helvetica-font-stack;
-  font-weight: $font-weight--medium;
-  @include mq(medium){
-    @include flexy(flex, row);
-    font-family: $helvetica-font-stack;
-    font-weight: $font-weight--medium;
-}}
-.chartjsLegend > ul {
-  @include flexy(flex, row);
-  justify-content: space-between;
-  padding: 0;
-  justify-content: space-around;
-  @include mq(medium){
-    @include flexy(flex, row);
-    justify-content: space-between;
-}}
-
-.widgets {
-  @include mq(medium){
-  @include flexy(flex, row);
-  justify-content: space-around;
-  width: 90%;
-  margin: 0 auto;
-  padding-bottom: 2em;
-  border-bottom: 1px solid $light-grey;
-}
-}
-
 .icon {
-  background-color: $header-color;
+  background-color:  $main-color;
   padding: 1em;
   margin: 1em;
   border-radius: 50%;
@@ -477,82 +161,32 @@ top: 9em;
   width: 75%;
   max-width: 500px;
   background-color: #f9f9f9;
-  margin: 0 auto;
+  @extend %center;
   margin-bottom: 1em;
   @include flexy(flex, row);
   justify-content: space-around;
   @include mq(medium){
-    border: 1px solid $light-grey;
-    padding: 2em;
     width: 30%;
     min-width: 228px;
     margin-right: 5px;
-    background-color: #f9f9f9;
-    @include flexy(flex, row);
-    justify-content: space-around;
     margin-bottom: 0;
 }
 }
 
 .social {
-  font-family: $helvetica-font-stack;
-  font-weight: $font-weight--medium;
-  color: $header-color;
+  color:  $main-color;
   margin: 0;
   border-bottom: 1px solid $light-grey;
   @include mq(medium) {
-    font-family: $helvetica-font-stack;
-    font-weight: $font-weight--medium;
-    color: $header-color;
-    margin: 0;
     border-bottom: none;
 }
 }
-.widget--content {
-  @include flexy(flex, column);
-  align-self: center;
-  @include mq(medium){
-  @include flexy(flex, column);
-  align-self: center;
-}
-}
 
-.stats {
-  font-family: $helvetica-font-stack;
-  font-weight: $font-weight--thin;
-  color: $light-grey;
-  font-size: 2em;
-  margin: 0;
-  @include mq(medium){
-  font-family: $helvetica-font-stack;
-  font-weight: $font-weight--thin;
-  color: $light-grey;
-  font-size: 2em;
-  margin: 0;
-}
-}
-
-// #doughnutChart {
-//   transform: rotate(90deg);
-// }
-
-.members,
-.widget {
-  width: 100%;
-  @include mq(medium){
-    width: 50%;
-}}
 
 .new-members,
 .user {
   width: 100%;
-  font-family: $helvetica-font-stack;
   @include flexy(flex, column);
-  @include mq(medium){
-    width: 100%;
-    font-family: $helvetica-font-stack;
-    @include flexy(flex, column);
-}
 }
 
 .user {
@@ -562,23 +196,16 @@ top: 9em;
 .recent-activity {
   height: 20em;
   width: 100%;
-  font-family: $helvetica-font-stack;
-  @include mq(medium){
-    height: 20em;
-    width: 100%;
-    font-family: $helvetica-font-stack;
-}
 }
 
 .member-row,
 .widget-row {
   @include flexy(flex, column);
   width: 100%;
-  margin: 0 auto;
+  @extend %center;
   overflow: auto;
   @include mq(medium){
     @include flexy(flex,row);
-    margin: 0 auto;
     width: 90%;
   }
   & > :first-child {
@@ -588,9 +215,7 @@ top: 9em;
 }
 }
 
-.member-row {
 
-}
 .widget-row {
   border-top: 1px solid $light-grey;
   @include mq(medium){
@@ -625,7 +250,7 @@ top: 9em;
     border-bottom: none;
   }
   &--email{
-    color: $main-color;
+    color: $widget-color;
   }
   &--arrow {
     transform: rotate(90deg);
@@ -640,292 +265,13 @@ top: 9em;
   & > img {
     border-radius: 50%;
   }
-  // & > :nth-child(1n):first-line {
-  //     text-transform: capitalize;
-  // }
-  & > p {
-    margin: 0;
-    font-size: 12px;
-    &.date {
-      margin-left:auto
-    }
 
-
-}
-}
-.search-user {
-  padding: 1em;
-  width: 100%;
-  margin: 0 auto;
-  @include mq(medium){
-    padding: 1em;
-    width: 80%;
-    margin: 0 auto;
-}
-}
-
-#search-user {
-  width: 100%;
-  border-radius: 5px;
-  border: 1px solid $light-grey;
-  background-color: #f9f9f9;
-  font-size: 1.2em;
-  @include mq(medium){
-    width: 100%;
-    border-radius: 5px;
-    border: 1px solid $light-grey;
-    background-color: #f9f9f9;
-    font-size: 1.2em;
-}
-}
-.message-user {
-  padding: 0 1em 1em 1em;
-  width: 100%;
-  margin: 0 auto;
-  @include mq(medium){
-    padding: 0 1em 1em 1em;
-    width: 80%;
-    margin: 0 auto;
-}
-}
-
-#message-user {
-  width: 100%;
-  height: 6em;
-  border-radius: 5px;
-  border: 1px solid $light-grey;
-  background-color: #f9f9f9;
-  font-family: $helvetica-font-stack;
-  @include mq(medium){
-    width: 100%;
-    height: 6em;
-    border-radius: 5px;
-    border: 1px solid $light-grey;
-    background-color: #f9f9f9;
-    font-family: $helvetica-font-stack;
-}
-}
-
-.send {
-  width:75%;
-  margin: 0 auto;
-  height: 4em;
-  border-radius: 5px;
-  background-color: $header-color;
-  color: $white;
-  font-family: $helvetica-font-stack;
-  font-weight: $font-weight--bold;
-  letter-spacing: 1px;
-  @include mq(medium){
-    width:75%;
-    margin: 0 auto;
-    height: 4em;
-    border-radius: 5px;
-    background-color: $header-color;
-    color: $white;
-    font-family: $helvetica-font-stack;
-    font-weight: $font-weight--bold;
-    letter-spacing: 1px;
-}
-}
-
-.search-user > input,
-textarea {
-  resize: none;
-  font-size: 1.2em;
-  padding: 1em;
-  font-family: $helvetica-font-stack;
-  @include mq(medium){
-  font-size: 1.2em;
-  padding: 1em;
-  font-family: $helvetica-font-stack;
-}}
-
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
-  font-size: 12px;
-}
-
-
-
-button:hover {
-  cursor: pointer;
-}
-
-.settings {
-  @include mq(medium){
-  padding: 1em;
-  margin: 0 auto;
-  width: 90%;
-  font-family: $helvetica-font-stack;
-}}
-.settings-switch {
-  @include flexy(flex, row);
-  justify-content: space-between;
-  margin: 0 auto;
-  margin-bottom: 1em;
-  margin-top: 2em;
-  width: 75%;
-  & > p {
-    margin: 0;
-    font-family: $helvetica-font-stack;
-  }
-  @include mq(medium){
-    @include flexy(flex, row);
-    justify-content: space-between;
-    width: 100%;
-
-   }
-  }
-
-/* The switch - the box around the slider */
-.switch {
-
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {display:none;}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: $header-color;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px $header-color;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(60px);
-  -ms-transform: translateX(26px);
-  transform: translateX(60px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-  width: 6em;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-  box-shadow: 0px 0px 5px 1px;
-}
-
-label.switch {
-  width: 5em;
-}
-
-
-/*------ ADDED CSS ---------*/
-.slider:after
-{
- content:'OFF';
- color: white;
- display: block;
- position: absolute;
- transform: translate(-50%,-50%);
- top: 50%;
- left: 65%;
- font-size: 12px;
- font-family: $helvetica-font-stack;
-}
-
-input:checked + .slider:after {
-  content:'ON';
-  top: 50%;
-  left: 40%;
-  font-family: $helvetica-font-stack;
-}
-
-.timezones {
-  height: 4em;
-  width: 75%;
-  margin-bottom: 2.5em;
-  @include mq(medium){
-    height: 4em;
-    width: 100%;
-    margin-bottom: 1.5em;
-    margin-left: 0;
-    margin-top: 1.3em;
-}
-}
-
-
-
-.save,
-.cancel {
-  width:75%;
-  margin: 0 auto;
-  margin-bottom: .5em;
-  height: 4em;
-  border-radius: 5px;
-  display: block;
-  background-color: $light-grey;
-  color: $white;
-  font-family: $helvetica-font-stack;
-  font-weight: $font-weight--bold;
-  letter-spacing: 1px;
-  border: none;
-  @include mq(medium){
-    width:48%;
-    margin-bottom: none;
-
-}
-}
-
-.save {
-  background-color: $header-color;
-  @include mq(medium){
-    margin-left: 0;
-    float: left;
-  }
-}
-
-.cancel {
-  @include mq(medium){
-    margin-right: 0;
-    float: right;
-  }
 }
 
 .error--box {
   height: 5em;
 }
 
-.select-list {
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-}
 
 .ui-autocomplete {
 max-height: 100px;
@@ -935,11 +281,8 @@ border-left: 1px solid black;
 border-bottom: 1px solid black;
 border-right: 1px solid black;
 background-color: white;
-@extend %main-font;
 text-align: left;
 padding: 0;
-font-weight: $font-weight--medium;
-font-size: .85em;
 /* prevent horizontal scrollbar */
 overflow-x: hidden;
 }

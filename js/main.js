@@ -188,6 +188,7 @@ hourlyChartToggle.style.display = 'none';
 dailyChartToggle.style.display ='none';
 monthlyChartToggle.style.display ='none';
 
+
 hourly.addEventListener('click', ()=> {
   weeklyChartToggle.style.display = 'none';
   hourlyChartToggle.style.display = 'block';
