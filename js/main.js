@@ -65,7 +65,7 @@ $.ajax({
     let name = firstName +' '+ lastName;
     let email = '<p class="member--email">'+ memberEmail; +'</p>';
 // Random time stamp variable
-    const time = '<p>'+ randomTime() + " hours ago" + '</p>';
+    const time = '<p class="time">'+ randomTime() + " hours ago" + '</p>';
 
 //Adds image to the new member widget and recent activity widget
     newMembers.children[i].children[0].innerHTML = image;

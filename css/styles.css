@@ -484,7 +484,7 @@ template {
           height: 35%;
           display: flex;
           flex-direction: column;
-          justify-content: flex-start space-between;
+          justify-content: space-between;
           align-items: center;
           padding: 0; } }
 
@@ -546,6 +546,9 @@ textarea::-webkit-input-placeholder,
 .search-user > input,
 textarea {
   font-size: 1.2em; }
+
+.time {
+  font-weight: 700; }
 
 .dashboard--search {
   width: 100%;
@@ -732,7 +735,7 @@ textarea {
     .save,
     .cancel {
       width: 48%;
-      margin-bottom: none; } }
+      margin-bottom: 0; } }
 
 .save {
   background-color: #65619E; }
@@ -1062,7 +1065,7 @@ input:checked + .slider:after {
       .member--info {
         display: flex;
         flex-direction: column;
-        align-items: left;
+        align-items: flex-start;
         margin-right: auto; } }
   .member--img {
     border-bottom: none; }

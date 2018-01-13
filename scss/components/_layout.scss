@@ -241,7 +241,7 @@ main {
     margin-right: 0;
     @include mq(medium){
       @include flexy(flex, column);
-      align-items: left;
+      align-items: flex-start;
       margin-right: auto;
   }
 
