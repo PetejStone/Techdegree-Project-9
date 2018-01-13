@@ -561,7 +561,8 @@ textarea {
   height: 4em;
   width: 75%;
   border-radius: 5px;
-  border: 1px solid #d1d1d1; }
+  border: 1px solid #d1d1d1;
+  position: relative; }
   @media (min-width: 768px) {
     #search {
       margin-top: 1.5em;
@@ -571,7 +572,8 @@ textarea {
 
 .search {
   display: flex;
-  margin: .5em 0 .5em 0; }
+  margin: .5em 0 .5em 0;
+  position: relative; }
   @media (min-width: 768px) {
     .search {
       margin: 0; } }
@@ -581,13 +583,12 @@ input[placeholder] {
 
 .spyglass {
   position: absolute;
-  right: 100px;
-  top: 9em; }
+  right: 14%;
+  top: 27%; }
   @media (min-width: 768px) {
     .spyglass {
-      right: 1em;
-      right: 1.5em;
-      top: 5.7em; } }
+      right: 2.5%;
+      top: 39%; } }
 
 .search-user {
   padding: 1em;
